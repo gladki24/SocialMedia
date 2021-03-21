@@ -1,7 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca6c0303-f793-4d58-bd81-83d5b176fa5d" name="Default Changelist" comment="" />
+    <list default="true" id="ca6c0303-f793-4d58-bd81-83d5b176fa5d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.routing.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/home/home.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/home/home.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/home/home.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/landing/landing.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/landing/landing.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/landing/landing.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/landing/landing.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/landing/landing.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/landing/landing.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/landing/landing.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/landing/landing.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/login/login.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/login/login.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/profile/profile.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/profile/profile.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/profile/profile.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/profile/profile.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/profile/profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/alerts-section/alerts-section.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/alerts-section/alerts-section.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/alerts-section/alerts-section.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/alerts-section/alerts-section.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/alerts-section/alerts-section.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/alerts-section/alerts-section.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/alerts-section/alerts-section.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/alerts-section/alerts-section.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/angular-section/angular-section.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/angular-section/angular-section.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/angular-section/angular-section.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/angular-section/angular-section.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/angular-section/angular-section.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/angular-section/angular-section.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/angular-section/angular-section.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/angular-section/angular-section.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/buttons-section/buttons-section.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/buttons-section/buttons-section.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/buttons-section/buttons-section.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/buttons-section/buttons-section.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/buttons-section/buttons-section.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/buttons-section/buttons-section.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/buttons-section/buttons-section.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/buttons-section/buttons-section.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/crs-section/crs-section.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/crs-section/crs-section.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/crs-section/crs-section.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/crs-section/crs-section.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/crs-section/crs-section.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/crs-section/crs-section.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/crs-section/crs-section.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/crs-section/crs-section.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/inputs-section/inputs-section.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/inputs-section/inputs-section.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/inputs-section/inputs-section.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/inputs-section/inputs-section.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/inputs-section/inputs-section.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/inputs-section/inputs-section.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/inputs-section/inputs-section.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/inputs-section/inputs-section.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/modal/modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/modal/modal.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/modal/modal.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/modal/modal.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/modal/modal.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/modal/modal.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/modal/modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/modal/modal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/navigation-section/navigation-section.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/navigation-section/navigation-section.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/navigation-section/navigation-section.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/navigation-section/navigation-section.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/navigation-section/navigation-section.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/navigation-section/navigation-section.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/navigation-section/navigation-section.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/navigation-section/navigation-section.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/nucleo-section/nucleo-section.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/nucleo-section/nucleo-section.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/nucleo-section/nucleo-section.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/nucleo-section/nucleo-section.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/nucleo-section/nucleo-section.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/nucleo-section/nucleo-section.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/nucleo-section/nucleo-section.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/nucleo-section/nucleo-section.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/sections.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/sections.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/sections.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/sections.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/sections.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/sections.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/sections.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/sections.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/sections.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/sections.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/tabs-section/tabs-section.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/tabs-section/tabs-section.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/tabs-section/tabs-section.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/tabs-section/tabs-section.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/tabs-section/tabs-section.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/tabs-section/tabs-section.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/tabs-section/tabs-section.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/tabs-section/tabs-section.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/typography-section/typography-section.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/typography-section/typography-section.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/typography-section/typography-section.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/typography-section/typography-section.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/typography-section/typography-section.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/typography-section/typography-section.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/typography-section/typography-section.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/typography-section/typography-section.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/versions-section/versions-section.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/versions-section/versions-section.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/versions-section/versions-section.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/versions-section/versions-section.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/versions-section/versions-section.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/versions-section/versions-section.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/sections/versions-section/versions-section.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/sections/versions-section/versions-section.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/shared/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/footer/footer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/shared/footer/footer.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/footer/footer.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/shared/footer/footer.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/footer/footer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/shared/footer/footer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/shared/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/navbar/navbar.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/shared/navbar/navbar.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/navbar/navbar.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/shared/navbar/navbar.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/shared/navbar/navbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/signup/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/signup/signup.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/signup/signup.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/signup/signup.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/signup/signup.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/signup/signup.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/signup/signup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/template/signup/signup.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,8 +104,35 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
+    <property name="ts.external.directory.path" value="D:\Programowanie\PP\frontend\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programowanie\PP\frontend\src\app\modules\template" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -32,10 +143,27 @@
       <option name="presentableId" value="Default" />
       <updated>1616346199728</updated>
       <workItem from="1616346202620" duration="262000" />
+      <workItem from="1616347396231" duration="2615000" />
     </task>
+    <task id="LOCAL-00001" summary="frontend initialization">
+      <created>1616347734055</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616347734055</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="frontend initialization" />
+    <option name="LAST_COMMIT_MESSAGE" value="frontend initialization" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
