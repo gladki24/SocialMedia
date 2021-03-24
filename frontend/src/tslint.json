@@ -4,14 +4,16 @@
         "directive-selector": [
             true,
             "attribute",
-            "app",
+            "ms",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "app",
+            "ms",
             "kebab-case"
-        ]
+        ],
+        "member-ordering": false,
+        "no-inferrable-types": false
     }
 }
