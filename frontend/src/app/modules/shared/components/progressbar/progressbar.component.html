@@ -1,0 +1,16 @@
+<div class="progress-info">
+    <div class="progress-label">
+        <span>{{ label }}</span>
+    </div>
+
+    <div class="progress-percentage">
+        <span>
+            {{ value | percent }}
+        </span>
+    </div>
+</div>
+
+<ngb-progressbar
+        [type]="type"
+        [value]="value"
+></ngb-progressbar>
