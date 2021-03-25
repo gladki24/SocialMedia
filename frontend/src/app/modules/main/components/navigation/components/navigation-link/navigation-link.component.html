@@ -1,5 +1,7 @@
-<div>
-    <a msLink color="primary" [routerLink]="link?.url">
-        <ms-icon [icon]="link?.icon"></ms-icon> <span>{{ link?.name }}</span>
+<div class="mb-2">
+    <a [routerLink]="link?.url">
+        <button msButton color="neutral" routerLinkActive="active" class="d-flex align-middle">
+            <ms-icon [icon]="link?.icon" class="mr-2 p-2"></ms-icon> <span class="link-name">{{ link?.name }}</span>
+        </button>
     </a>
 </div>
