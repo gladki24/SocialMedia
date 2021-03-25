@@ -29,7 +29,8 @@ import { IconComponent } from './components/icon/icon.component';
   exports: [
     ButtonDirective,
     LinkDirective,
-    IconComponent
+    IconComponent,
+    InputDirective
   ]
 })
 export class SharedModule {

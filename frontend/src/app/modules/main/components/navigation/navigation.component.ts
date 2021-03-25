@@ -22,8 +22,6 @@ export class NavigationComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    console.log(Icon);
-
     this.links = this._builder
       .add({
         name: 'Home',
@@ -31,18 +29,16 @@ export class NavigationComponent implements OnInit {
         icon: this.Icon.Home
       })
       .add({
-        name: 'Notifications',
+        name: 'Powiadomienia',
         url: '/notifications',
         icon: this.Icon.Notifications
       })
       .add({
-        name: 'Profile',
+        name: 'Profil',
         url: '/profile',
         icon: this.Icon.Profile
       })
       .build();
-
-    console.log(this.links);
   }
 
 }

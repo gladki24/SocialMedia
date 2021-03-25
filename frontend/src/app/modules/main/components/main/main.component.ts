@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MainActivityBase } from '../../classes/main-activity.abstract';
 
 @Component({
   selector: 'ms-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: [ './main.component.scss' ]
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
 
-  constructor() { }
+  public title: string;
 
-  ngOnInit(): void {
+  public setTitle(data: MainActivityBase): void {
+    this.title = data.title;
   }
-
 }

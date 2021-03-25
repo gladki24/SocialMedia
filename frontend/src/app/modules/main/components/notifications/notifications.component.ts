@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { MainActivityBase } from '../../classes/main-activity.abstract';
 
 @Component({
   selector: 'ms-notifications',
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.scss']
 })
-export class NotificationsComponent implements OnInit {
+export class NotificationsComponent
+  extends MainActivityBase
+  implements OnInit {
 
-  constructor() { }
+  public constructor() {
+    super('Powiadomienia');
+  }
 
   ngOnInit(): void {
   }
