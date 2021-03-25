@@ -1,0 +1,13 @@
+<div class="mb-2 d-block w-100">
+    <a
+            [routerLink]="link?.url"
+            routerLinkActive="active"
+            role="button"
+            msButton
+            class="d-flex"
+            color="neutral"
+    >
+        <ms-icon [icon]="link?.icon" class="mr-2 p-2"></ms-icon>
+        <span class="link-name">{{ link?.name }} </span>
+    </a>
+</div>

@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+        <h2 class="mb-3">
+            <a class="p-0" routerLink="/" msLink>
+                <ms-icon size="30px" [icon]="Icon.Logo"></ms-icon>
+            </a>
+        </h2>
+
+        <ms-navigation-link
+                *ngFor="let link of links"
+                [link]="link"
+        ></ms-navigation-link>
+
+        <button msButton size="medium" color="primary" class="w-100 mt-3">
+            Jodłuj
+        </button>
+    </div>
+</div>

@@ -10,7 +10,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from '../../app.routing';
-import {HomeModule} from './home/home.module';
 import {SignupComponent} from './signup/signup.component';
 
 
@@ -24,13 +23,15 @@ import {SignupComponent} from './signup/signup.component';
     FooterComponent,
     LoginComponent
   ],
+  exports: [
+    LandingComponent
+  ],
   imports: [
     BrowserModule,
     NgbModule,
     FormsModule,
     RouterModule,
-    AppRoutingModule,
-    HomeModule
+    AppRoutingModule
   ]
 })
 export class TemplateModule { }

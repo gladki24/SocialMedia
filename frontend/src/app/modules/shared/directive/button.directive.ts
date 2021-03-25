@@ -2,7 +2,7 @@ import {Directive, HostBinding, Input} from '@angular/core';
 import {ButtonColor, ButtonSize} from '../types/button';
 
 @Directive({
-  selector: 'button [msButton]'
+  selector: 'button, a [msButton]'
 })
 export class ButtonDirective {
 
@@ -57,61 +57,61 @@ export class ButtonDirective {
   }
 
   @HostBinding('class.btn-danger')
-  public isDanger(): boolean {
+  public get isDanger(): boolean {
     return this.color === 'danger' && !this.isOutline;
   }
 
   @HostBinding('class.btn-neutral')
-  public isNeutral(): boolean {
+  public get isNeutral(): boolean {
     return this.color === 'neutral' && !this.isOutline;
   }
 
-  @HostBinding('class.btn-primary')
+  @HostBinding('class.btn-outline-primary')
   public get isOutlinedPrimary(): boolean {
     return this.color === 'primary' && this.isOutline;
   }
 
-  @HostBinding('class.btn-info')
+  @HostBinding('class.btn-outline-info')
   public get isOutlinedInfo(): boolean {
     return this.color === 'info' && this.isOutline;
   }
 
-  @HostBinding('class.btn-success')
+  @HostBinding('class.btn-outline-success')
   public get isOutlinedSuccess(): boolean {
     return this.color === 'success' && this.isOutline;
   }
 
-  @HostBinding('class.btn-warning')
+  @HostBinding('class.btn-outline-warning')
   public get isOutlinedWarning(): boolean {
     return this.color === 'warning' && this.isOutline;
   }
 
-  @HostBinding('class.btn-danger')
-  public isOutlinedDanger(): boolean {
+  @HostBinding('class.btn-outline-danger')
+  public get isOutlinedDanger(): boolean {
     return this.color === 'danger' && this.isOutline;
   }
 
-  @HostBinding('class.btn-neutral')
-  public isOutlinedNeutral(): boolean {
+  @HostBinding('class.btn-outline-neutral')
+  public get isOutlinedNeutral(): boolean {
     return this.color === 'neutral' && this.isOutline;
   }
 
   @HostBinding('class.btn-sm')
-  public isSmall(): boolean {
+  public get isSmall(): boolean {
     return this.size === 'small';
   }
 
   @HostBinding('class.btn-md')
-  public isMedium(): boolean {
+  public get isMedium(): boolean {
     return this.size === 'medium';
   }
 
   @HostBinding('class.btn-lg')
-  public isLarge(): boolean {
+  public get isLarge(): boolean {
     return this.size === 'large';
   }
 
   private _size: ButtonSize = 'medium';
   private _color: ButtonColor = 'primary';
-  private _isOutline = false;
+  private _isOutline: boolean = false;
 }

@@ -6,10 +6,9 @@ import { InputDirective } from './directive/input.directive';
 import { BadgeComponent } from './components/badge/badge.component';
 import { PillComponent } from './components/pill/pill.component';
 import { ProgressbarComponent } from './components/progressbar/progressbar.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { TabsetComponent } from './components/tabset/tabset.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TabsComponent } from './components/tabs/tabs.component';
-
+import { IconComponent } from './components/icon/icon.component';
 
 
 @NgModule({
@@ -20,8 +19,8 @@ import { TabsComponent } from './components/tabs/tabs.component';
     BadgeComponent,
     PillComponent,
     ProgressbarComponent,
-    TabsetComponent,
-    TabsComponent
+    TabsComponent,
+    IconComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +28,10 @@ import { TabsComponent } from './components/tabs/tabs.component';
   ],
   exports: [
     ButtonDirective,
-    LinkDirective
+    LinkDirective,
+    IconComponent,
+    InputDirective
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}
