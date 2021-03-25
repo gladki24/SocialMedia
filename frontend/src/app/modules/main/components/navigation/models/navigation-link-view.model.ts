@@ -4,7 +4,7 @@ export interface INavigationLinkInfo {
   url: string;
   name: string;
   icon: Icon;
-};
+}
 
 export class NavigationLinkViewModel {
   public url: string;

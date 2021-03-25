@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-body">
+        <h2>
+            <a routerLink="/" msLink>
+                <ms-icon [icon]="Icon.Logo"></ms-icon>
+            </a>
+        </h2>
+
+        <ms-navigation-link
+                *ngFor="let link of links"
+                [link]="link"
+        ></ms-navigation-link>
+    </div>
+</div>

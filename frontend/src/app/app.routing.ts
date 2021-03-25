@@ -16,6 +16,11 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'prefix'
+      },
+      {
         path: 'home',
         component: HomeComponent
       },
