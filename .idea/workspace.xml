@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca6c0303-f793-4d58-bd81-83d5b176fa5d" name="Default Changelist" comment="reorganize template">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/shared/components/icon/icon.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/main/components/navigation/components/navigation-link/navigation-link.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/main/components/navigation/components/navigation-link/navigation-link.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/main/components/navigation/components/navigation-link/navigation-link.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/main/components/navigation/components/navigation-link/navigation-link.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/main/components/navigation/navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/main/components/navigation/navigation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/main/components/notifications/notifications.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/main/components/notifications/notifications.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/main/components/user/user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/main/components/user/user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/shared/components/icon/icon.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/shared/components/icon/icon.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/shared/components/icon/icon.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/shared/components/icon/icon.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/shared/directive/button.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/shared/directive/button.directive.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616709921102</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="navigation">
+      <created>1616710612962</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616710612962</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +158,8 @@
     <MESSAGE value="reorganize template" />
     <MESSAGE value="build structure" />
     <MESSAGE value="create structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="create structure" />
+    <MESSAGE value="navigation" />
+    <option name="LAST_COMMIT_MESSAGE" value="navigation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -10,4 +10,5 @@ import { Icon } from '../../enums/icon.enum';
 })
 export class IconComponent {
   @Input() public icon: Icon;
+  @Input() public size: string = '14px';
 }
