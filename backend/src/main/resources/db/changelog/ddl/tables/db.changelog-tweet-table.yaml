@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: tweet-create-table
+      author: dawiddanel
+      changes:
+        - createTable:
+            tableName: TWEET
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: PK_TWEET_ID
+              - column:
+                  name: USER_ID
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: FK_TWEET_USER_ID
+                    references: USER(ID)
+              - column:
+                  name: PARENT_TWEET_ID
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+                    foreignKeyName: FK_PARENT_TWEET_ID
+                    references: TWEET(ID)
+              - column:
+                  name: TEXT
+                  type: NVARCHAR(255)
+              - column:
+                  name: LINK
+                  type: NVARCHAR(20)
+        - createSequence:
+            sequenceName: SEQ_TWEET
+            startValue: 1
+            incrementBy: 1

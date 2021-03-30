@@ -1,1 +1,31 @@
-
+spring:
+  application:
+    name: "social-media"
+  profiles:
+    active: integration
+server:
+  port: 8085
+  servlet:
+    context-path: "/social-media"
+---
+spring:
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  config:
+    activate:
+      on-profile: integration
+---
+spring:
+  datasource:
+    url: "TODO"
+    username: "TODO"
+    password: "TODO"
+  config:
+    activate:
+      on-profile: runtime

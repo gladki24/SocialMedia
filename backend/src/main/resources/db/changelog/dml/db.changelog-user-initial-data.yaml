@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: user-initialization
+      author: dawiddanel
+      changes:
+        - insert:
+            tableName: USER
+            columns:
+              - column:
+                  name: ID
+                  valueComputed: SEQ_USER.nextval
+              - column:
+                  name: IDENTIFIER
+                  value: 'administrator'
+              - column:
+                  name: CREATED_DATE
+                  value: to_date('2021-03-31', 'yyyy-mm-dd')
+        - insert:
+            tableName: USER
+            columns:
+              - column:
+                  name: ID
+                  valueComputed: SEQ_USER.nextval
+              - column:
+                  name: IDENTIFIER
+                  value: 'beztroskiRomantyk'
+              - column:
+                  name: CREATED_DATE
+                  value: to_date('2021-03-31', 'yyyy-mm-dd')
+        - insert:
+            tableName: USER
+            columns:
+              - column:
+                  name: ID
+                  valueComputed: SEQ_USER.nextval
+              - column:
+                  name: IDENTIFIER
+                  value: 'zgnityZiemniak'
+              - column:
+                  name: CREATED_DATE
+                  value: to_date('2021-03-31', 'yyyy-mm-dd')

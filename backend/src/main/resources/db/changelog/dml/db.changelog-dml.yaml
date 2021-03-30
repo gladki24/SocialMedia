@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - include:
+      file: db.changelog-user-initial-data.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-account-initial-data.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-tweet-initial-data.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-emotion-initial-data.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-user_follow-initial-data.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-follow_user-initial-data.yaml
+      relativeToChangelogFile: true

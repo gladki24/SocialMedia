@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: account-initialization
+      author: dawiddanel
+      changes:
+        - insert:
+            tableName: ACCOUNT
+            columns:
+              - column:
+                  name: USER_ID
+                  value: 1
+              - column:
+                  name: USERNAME
+                  value: 'admin'
+              - column:
+                  name: PASSWORD
+                  value: 'admin'
+              - column:
+                  name: ROLE
+                  value: 'ADMIN'
+        - insert:
+            tableName: ACCOUNT
+            columns:
+              - column:
+                  name: USER_ID
+                  value: 2
+              - column:
+                  name: USERNAME
+                  value: 'romantyk'
+              - column:
+                  name: PASSWORD
+                  value: 'romantyk'
+              - column:
+                  name: ROLE
+                  value: 'USER'
+        - insert:
+            tableName: ACCOUNT
+            columns:
+              - column:
+                  name: USER_ID
+                  value: 3
+              - column:
+                  name: USERNAME
+                  value: 'ziemniak'
+              - column:
+                  name: PASSWORD
+                  value: 'ziemniak'
+              - column:
+                  name: ROLE
+                  value: 'USER'
