@@ -7,6 +7,8 @@ server:
   port: 8085
   servlet:
     context-path: "/social-media"
+jwt:
+  secret: "SOCIALMEDIA"
 ---
 spring:
   h2:

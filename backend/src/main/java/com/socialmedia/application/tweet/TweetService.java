@@ -6,6 +6,7 @@ import com.socialmedia.domain.tweet.Tweet;
 import com.socialmedia.domain.tweet.TweetRepository;
 import com.socialmedia.domain.tweet.dto.TweetDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class TweetService {
     private final TweetRepository tweetRepository;
     private final AllInOneMapper mapper;
 
+    @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
     public List<TweetDto> getAllUserTweets(Identifier identifier) {
         List<Tweet> tweets = tweetRepository.findAllByUserIdentifier(identifier);
         return mapper.tweets(tweets);
