@@ -12,8 +12,5 @@ databaseChangeLog:
       file: db.changelog-emotion-initial-data.yaml
       relativeToChangelogFile: true
   - include:
-      file: db.changelog-user_follow-initial-data.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: db.changelog-follow_user-initial-data.yaml
+      file: db.changelog-following-initial-data.yaml
       relativeToChangelogFile: true

@@ -14,6 +14,7 @@ databaseChangeLog:
                   value: 'admin'
               - column:
                   name: PASSWORD
+                  #admin
                   value: '$2a$10$6MQp/jM5f5U.Wp85mCLloerPRuVtguPOX9klNUeLX7XptuBiwnfqq'
               - column:
                   name: ROLE
@@ -29,6 +30,7 @@ databaseChangeLog:
                   value: 'romantyk'
               - column:
                   name: PASSWORD
+                  #romantyk
                   value: '$2a$10$YbmPVrX.HdtOxm.0YwhS3.dj7KofbZnyVl5eANz6tUxY7WQFNLusy'
               - column:
                   name: ROLE
@@ -44,6 +46,7 @@ databaseChangeLog:
                   value: 'ziemniak'
               - column:
                   name: PASSWORD
+                  #ziemniak
                   value: '$2a$10$SaBeEZX/Y3CKkArbhTYHr.llrl.WVdiVrRiHU/.jvxm0W8gGr/65q'
               - column:
                   name: ROLE

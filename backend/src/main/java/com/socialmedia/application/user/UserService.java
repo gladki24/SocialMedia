@@ -1,27 +1,72 @@
 package com.socialmedia.application.user;
 
+import com.socialmedia.adapters.rest.resource.command.RegisterCommand;
+import com.socialmedia.application.account.AccountService;
+import com.socialmedia.application.mapper.AllInOneMapper;
 import com.socialmedia.domain.common.Identifier;
+import com.socialmedia.domain.common.Password;
 import com.socialmedia.domain.common.Username;
-import com.socialmedia.domain.user.User;
-import com.socialmedia.domain.user.UserRepository;
+import com.socialmedia.domain.user.*;
+import com.socialmedia.domain.user.dto.AccountDto;
+import com.socialmedia.domain.user.dto.UserDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class UserService {
 
-    private final UserRepository userRepository;
+    private final AllInOneMapper mapper;
 
-    public User findByUsername(Username username) {
-        return userRepository.findByAccountUsername(username);
+    private final UserRepository userRepository;
+    private final AccountRepository accountRepository;
+
+    private final PasswordEncoder passwordEncoder;
+
+    @Transactional
+    public AccountDto createUserAccount(RegisterCommand command) {
+        Username username = Username.of(command.getUsername());
+        Password password = Password.of(passwordEncoder.encode(command.getPassword()));
+        com.socialmedia.domain.user.User user = createUser(command.getIdentifier());
+        Account account = new Account(username, password, user);
+        return mapper.account(accountRepository.save(account));
     }
 
     @Transactional
     public User createUser(String identifier) {
         User user = new User(Identifier.of(identifier));
         return userRepository.save(user);
+    }
+
+    public List<UserDto> listOfFollowedUsers() {
+        User currentUser = getCurrentUserAccount();
+        return currentUser.getFollowing().stream()
+                .map(Following::getTo)
+                .map(mapper::user)
+                .collect(Collectors.toList());
+    }
+
+    public List<UserDto> listOfFollowingUsers() {
+        User currentUser = getCurrentUserAccount();
+        return currentUser.getFollowers().stream()
+                .map(Following::getTo)
+                .map(mapper::user)
+                .collect(Collectors.toList());
+    }
+
+    public User getCurrentUserAccount() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        org.springframework.security.core.userdetails.User user = (org.springframework.security.core.userdetails.User) auth.getPrincipal();
+        Username username = Username.of(user.getUsername());
+        return userRepository.findByAccountUsername(username);
     }
 
 }

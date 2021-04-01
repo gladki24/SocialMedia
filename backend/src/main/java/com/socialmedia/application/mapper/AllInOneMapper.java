@@ -26,6 +26,8 @@ public interface AllInOneMapper {
 
     EmotionDto emotion(Emotion emotion);
 
+    List<UserDto> users(List<User> tweets);
+
     @Mapping(target = "identifier", source = "identifier.value")
     UserDto user(User user);
 

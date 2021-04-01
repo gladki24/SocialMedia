@@ -11,7 +11,9 @@ import org.springframework.data.annotation.CreatedDate;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "USER")
@@ -42,19 +44,11 @@ public class User {
     )
     private List<Tweet> tweets = new ArrayList<>();
 
-    @ManyToMany
-    @JoinTable(name = "USER_FOLLOW",
-            joinColumns = @JoinColumn(name = "USER_ID"),
-            inverseJoinColumns = @JoinColumn(name = "FOLLOWED_USER_ID")
-    )
-    private List<User> usersThisUserFollows;
+    @OneToMany(mappedBy="from")
+    private List<Following> following;
 
-    @ManyToMany
-    @JoinTable(name = "FOLLOW_USER",
-            joinColumns = @JoinColumn(name = "FOLLOWED_USER_ID"),
-            inverseJoinColumns = @JoinColumn(name = "USER_ID")
-    )
-    private List<User> usersFollowingThisUser;
+    @OneToMany(mappedBy="to")
+    private List<Following> followers;
 
     public User(Identifier identifier) {
         this.identifier = identifier;
@@ -68,21 +62,5 @@ public class User {
     public void removeTweet(Tweet tweet) {
         tweets.remove(tweet);
         tweet.setUser(null);
-    }
-
-    public void followUser(User user) {
-        usersThisUserFollows.add(user);
-    }
-
-    public void unfollowUser(User user) {
-        usersThisUserFollows.remove(user);
-    }
-
-    public void userFollowed(User user) {
-        usersFollowingThisUser.add(user);
-    }
-
-    public void userUnfollowed(User user) {
-        usersFollowingThisUser.remove(user);
     }
 }
