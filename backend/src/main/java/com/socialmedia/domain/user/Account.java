@@ -26,7 +26,6 @@ public class Account {
 
     @Embedded
     @AttributeOverride(name = "value", column = @Column(name = "PASSWORD"))
-    //TODO hashowanie
     private Password password;
 
     @Enumerated(value = EnumType.STRING)
@@ -36,4 +35,10 @@ public class Account {
     @MapsId
     private User user;
 
+    public Account(Username username, Password password, User user) {
+        this.username = username;
+        this.password = password;
+        this.role = Role.USER;
+        this.user = user;
+    }
 }

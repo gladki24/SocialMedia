@@ -1,8 +1,10 @@
 package com.socialmedia.adapters.rest.resource;
 
+import com.socialmedia.adapters.rest.resource.command.RegisterCommand;
 import com.socialmedia.adapters.rest.resource.command.SignInCommand;
 import com.socialmedia.adapters.rest.resource.response.AuthenticationResponse;
 import com.socialmedia.application.account.AccountService;
+import com.socialmedia.domain.user.dto.AccountDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +23,11 @@ public class AccountResource {
     public AuthenticationResponse authenticate(@RequestBody SignInCommand command) throws Exception {
         String token = accountService.authenticate(command);
         return new AuthenticationResponse(token);
+    }
+
+    @PostMapping(value = "/register")
+    public AccountDto signIn(@RequestBody RegisterCommand command) {
+        return accountService.createUserAccount(command);
     }
 
 }

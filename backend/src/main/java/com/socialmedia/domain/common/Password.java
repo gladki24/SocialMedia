@@ -27,7 +27,6 @@ public class Password {
     }
 
     private void initValue(String value) {
-        //TODO niech on to zamienia w locie na BCCRYPT
         DomainAsserts.assertArgumentNotTooLong(value, PASSWORD_MAX_LENGTH, "Username cannot be longer then " + PASSWORD_MAX_LENGTH + " characters");
         this.value = value;
     }

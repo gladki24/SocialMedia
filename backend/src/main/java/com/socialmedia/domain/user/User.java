@@ -56,6 +56,10 @@ public class User {
     )
     private List<User> usersFollowingThisUser;
 
+    public User(Identifier identifier) {
+        this.identifier = identifier;
+    }
+
     public void addTweet(Tweet tweet) {
         tweets.add(tweet);
         tweet.setUser(this);
