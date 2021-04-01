@@ -18,13 +18,23 @@ public class UserResource {
     private final UserService userService;
 
     @GetMapping("/followed/all")
-    public List<UserDto> listOfFollowedUsers() {
-        return userService.listOfFollowedUsers();
+    public List<UserDto> currentUserListOfFollowedUsers() {
+        return userService.currentUserListOfFollowedUsers();
     }
 
     @GetMapping("/following/all")
-    public List<UserDto> listOfFollowingUsers() {
-        return userService.listOfFollowingUsers();
+    public List<UserDto> currentUserListOfFollowingUsers() {
+        return userService.currentUserListOfFollowingUsers();
+    }
+
+    @GetMapping("/profile")
+    public UserDto currentProfile() {
+        return userService.currentUser();
+    }
+
+    @GetMapping("/all")
+    public List<UserDto> allUsers() {
+        return userService.allUsers();
     }
 
 }

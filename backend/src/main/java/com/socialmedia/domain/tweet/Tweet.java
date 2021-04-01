@@ -1,5 +1,6 @@
 package com.socialmedia.domain.tweet;
 
+import com.socialmedia.application.tweet.LinkGenerator;
 import com.socialmedia.domain.common.Link;
 import com.socialmedia.domain.common.Text;
 import com.socialmedia.domain.emotions.Emotion;
@@ -43,6 +44,20 @@ public class Tweet {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "PARENT_TWEET_ID")
     private List<Tweet> comments = new ArrayList<>();
+
+    public Tweet(Text text, User user) {
+        this.text = text;
+        this.link = Link.init();
+        this.user = user;
+    }
+
+    public void addEmotion(Emotion emotion) {
+        this.emotions.add(emotion);
+    }
+
+    public void addComment(Tweet tweet) {
+        this.comments.add(tweet);
+    }
 
 }
 

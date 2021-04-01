@@ -33,4 +33,9 @@ public class Emotion {
     @JoinColumn(name = "USER_ID")
     private User user;
 
+    public Emotion(EmotionType type, User user) {
+        this.type = type;
+        this.user = user;
+    }
+
 }

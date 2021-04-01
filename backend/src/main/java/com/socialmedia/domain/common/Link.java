@@ -17,6 +17,14 @@ public class Link {
         return new Link();
     }
 
+    public static Link of(String link) {
+        return new Link(link);
+    }
+
+    private Link(String link) {
+        this.value = link;
+    }
+
     private Link() {
         initValue();
     }

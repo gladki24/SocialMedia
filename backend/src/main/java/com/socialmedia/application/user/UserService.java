@@ -1,7 +1,6 @@
 package com.socialmedia.application.user;
 
 import com.socialmedia.adapters.rest.resource.command.RegisterCommand;
-import com.socialmedia.application.account.AccountService;
 import com.socialmedia.application.mapper.AllInOneMapper;
 import com.socialmedia.domain.common.Identifier;
 import com.socialmedia.domain.common.Password;
@@ -10,6 +9,7 @@ import com.socialmedia.domain.user.*;
 import com.socialmedia.domain.user.dto.AccountDto;
 import com.socialmedia.domain.user.dto.UserDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -35,7 +34,7 @@ public class UserService {
     public AccountDto createUserAccount(RegisterCommand command) {
         Username username = Username.of(command.getUsername());
         Password password = Password.of(passwordEncoder.encode(command.getPassword()));
-        com.socialmedia.domain.user.User user = createUser(command.getIdentifier());
+        User user = createUser(command.getIdentifier());
         Account account = new Account(username, password, user);
         return mapper.account(accountRepository.save(account));
     }
@@ -46,7 +45,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public List<UserDto> listOfFollowedUsers() {
+    public List<UserDto> currentUserListOfFollowedUsers() {
         User currentUser = getCurrentUserAccount();
         return currentUser.getFollowing().stream()
                 .map(Following::getTo)
@@ -54,12 +53,22 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
-    public List<UserDto> listOfFollowingUsers() {
+    public List<UserDto> currentUserListOfFollowingUsers() {
         User currentUser = getCurrentUserAccount();
         return currentUser.getFollowers().stream()
                 .map(Following::getTo)
                 .map(mapper::user)
                 .collect(Collectors.toList());
+    }
+
+    public UserDto currentUser() {
+        User user = getCurrentUserAccount();
+        return mapper.user(user);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public List<UserDto> allUsers() {
+        return mapper.users(userRepository.findAll());
     }
 
     public User getCurrentUserAccount() {
