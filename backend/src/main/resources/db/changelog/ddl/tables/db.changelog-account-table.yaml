@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: account-create-table
+      author: dawiddanel
+      changes:
+        - createTable:
+            tableName: ACCOUNT
+            columns:
+              - column:
+                  name: USER_ID
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    unique: true
+                    uniqueConstraintName: UQ_ACCOUNT_USER_ID
+                    foreignKeyName: FK_ACCOUNT_USER_ID
+                    references: USER(ID)
+              - column:
+                  name: USERNAME
+                  type: NVARCHAR(20)
+              - column:
+                  name: PASSWORD
+                  type: NVARCHAR(255)
+              - column:
+                  name: ROLE
+                  type: NVARCHAR(20)

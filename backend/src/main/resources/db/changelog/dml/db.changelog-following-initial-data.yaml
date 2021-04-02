@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: user-initialization
+      author: dawiddanel
+      changes:
+        - insert:
+            tableName: FOLLOWING
+            columns:
+              - column:
+                  name: ID
+                  valueComputed: SEQ_FOLLOWING.nextval
+              - column:
+                  name: FROM_USER_ID
+                  value: 2
+              - column:
+                  name: TO_USER_ID
+                  value: 3

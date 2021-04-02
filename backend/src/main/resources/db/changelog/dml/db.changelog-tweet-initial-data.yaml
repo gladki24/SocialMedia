@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: tweet-initialization
+      author: dawiddanel
+      changes:
+        - insert:
+            tableName: TWEET
+            columns:
+              - column:
+                  name: ID
+                  valueComputed: SEQ_TWEET.nextval
+              - column:
+                  name: USER_ID
+                  value: 2
+              - column:
+                  name: PARENT_TWEET_ID
+                  value: null
+              - column:
+                  name: TEXT
+                  value: 'Przykładowy tweet numer 1, zasadniczo za dużo się tutaj nie dzieje, może spróbuj dodać własny'
+              - column:
+                  name: LINK
+                  value: '5WRqhll4zCbPj6GYPNvK'
+        - insert:
+            tableName: TWEET
+            columns:
+              - column:
+                  name: ID
+                  valueComputed: SEQ_TWEET.nextval
+              - column:
+                  name: USER_ID
+                  value: 3
+              - column:
+                  name: PARENT_TWEET_ID
+                  value: 1
+              - column:
+                  name: TEXT
+                  value: 'Przykładowy tweet numer 2, jest on komentarzem do tweeta numer 1'
+              - column:
+                  name: LINK
+                  value: 'PF64tL9VaY4489ZlXKC9'

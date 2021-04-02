@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: account-initialization
+      author: dawiddanel
+      changes:
+        - insert:
+            tableName: ACCOUNT
+            columns:
+              - column:
+                  name: USER_ID
+                  value: 1
+              - column:
+                  name: USERNAME
+                  value: 'admin'
+              - column:
+                  name: PASSWORD
+                  #admin
+                  value: '$2a$10$6MQp/jM5f5U.Wp85mCLloerPRuVtguPOX9klNUeLX7XptuBiwnfqq'
+              - column:
+                  name: ROLE
+                  value: 'ADMIN'
+        - insert:
+            tableName: ACCOUNT
+            columns:
+              - column:
+                  name: USER_ID
+                  value: 2
+              - column:
+                  name: USERNAME
+                  value: 'romantyk'
+              - column:
+                  name: PASSWORD
+                  #romantyk
+                  value: '$2a$10$YbmPVrX.HdtOxm.0YwhS3.dj7KofbZnyVl5eANz6tUxY7WQFNLusy'
+              - column:
+                  name: ROLE
+                  value: 'USER'
+        - insert:
+            tableName: ACCOUNT
+            columns:
+              - column:
+                  name: USER_ID
+                  value: 3
+              - column:
+                  name: USERNAME
+                  value: 'ziemniak'
+              - column:
+                  name: PASSWORD
+                  #ziemniak
+                  value: '$2a$10$SaBeEZX/Y3CKkArbhTYHr.llrl.WVdiVrRiHU/.jvxm0W8gGr/65q'
+              - column:
+                  name: ROLE
+                  value: 'USER'

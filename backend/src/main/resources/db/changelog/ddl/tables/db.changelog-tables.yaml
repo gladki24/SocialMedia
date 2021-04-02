@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - include:
+      file: db.changelog-user-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-account-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-tweet-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-emotion-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-following-table.yaml
+      relativeToChangelogFile: true
