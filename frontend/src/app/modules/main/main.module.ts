@@ -25,9 +25,10 @@ import { NotificationsComponent } from './components/notifications/notifications
     RouterModule,
     TemplateModule
   ],
-  exports: [
-    MainComponent
-  ]
+    exports: [
+        MainComponent,
+        NotificationsComponent
+    ]
 })
 export class MainModule {
 }

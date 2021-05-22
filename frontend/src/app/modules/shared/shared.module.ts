@@ -9,6 +9,9 @@ import { ProgressbarComponent } from './components/progressbar/progressbar.compo
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { IconComponent } from './components/icon/icon.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AlertsComponent } from './components/alerts/alerts.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 
 @NgModule({
@@ -20,18 +23,22 @@ import { IconComponent } from './components/icon/icon.component';
     PillComponent,
     ProgressbarComponent,
     TabsComponent,
-    IconComponent
+    IconComponent,
+    AlertsComponent,
+    AlertComponent
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     NgbModule
   ],
-  exports: [
-    ButtonDirective,
-    LinkDirective,
-    IconComponent,
-    InputDirective
-  ]
+    exports: [
+        ButtonDirective,
+        LinkDirective,
+        IconComponent,
+        InputDirective,
+        AlertsComponent
+    ]
 })
-export class SharedModule {
+export class  SharedModule {
 }
