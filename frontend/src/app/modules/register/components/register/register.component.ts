@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from '../../services/register.service';
+import {AlertService} from "../../../shared/services/alert.service";
+import {NavigatorService} from "../../../shared/services/navigator.service";
 
+// TODO add validation for inputs
 @Component({
   selector: 'ms-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class MsRegisterComponent implements OnInit {
+export class MsRegisterComponent {
 
   public readonly registerForm = new FormGroup({
     login: new FormControl('', Validators.required),
@@ -17,14 +20,22 @@ export class MsRegisterComponent implements OnInit {
   });
 
   public constructor(
-    private readonly service: RegisterService
+    private readonly service: RegisterService,
+    private readonly alertService: AlertService,
+    private readonly navigatorService: NavigatorService
   ) { }
 
-  public ngOnInit(): void {
-  }
-
   public onSubmit(): void {
-    console.log(this.registerForm.value);
+    this.service.register(
+        this.registerForm.value['login'],
+        this.registerForm.value['name'],
+        this.registerForm.value['password']
+    ).subscribe(() => {
+      this.alertService.notifySuccess('Rejestracja', 'Utworzono konto')
+      this.navigatorService.login();
+    }, error => {
+      this.alertService.notifyDanger('Błąd', error)
+    });
   }
 
 }

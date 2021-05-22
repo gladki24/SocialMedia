@@ -1,0 +1,8 @@
+<ms-alert
+        *ngFor="let notification of notifications; let i = index"
+        [body]="notification.body"
+        [header]="notification.header"
+        [type]="notification.type"
+
+        (close)="close(i)"
+></ms-alert>

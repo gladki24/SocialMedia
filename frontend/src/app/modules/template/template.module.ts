@@ -11,6 +11,8 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from '../../app.routing';
 import {SignupComponent} from './signup/signup.component';
+import {MainModule} from "../main/main.module";
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -26,12 +28,13 @@ import {SignupComponent} from './signup/signup.component';
   exports: [
     LandingComponent
   ],
-  imports: [
-    BrowserModule,
-    NgbModule,
-    FormsModule,
-    RouterModule,
-    AppRoutingModule
-  ]
+    imports: [
+        BrowserModule,
+        NgbModule,
+        FormsModule,
+        RouterModule,
+        AppRoutingModule,
+        SharedModule
+    ]
 })
 export class TemplateModule { }

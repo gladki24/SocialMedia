@@ -4,6 +4,8 @@ import { TemplateModule } from './modules/template/template.module';
 import { MainModule } from './modules/main/main.module';
 import { LoginModule } from './modules/login/login.module';
 import { RegisterModule } from './modules/register/register.module';
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {JwtInterceptor} from "./modules/shared/interceptors/jwt.interceptor";
 
 
 @NgModule({
@@ -14,7 +16,13 @@ import { RegisterModule } from './modules/register/register.module';
     RegisterModule,
     TemplateModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

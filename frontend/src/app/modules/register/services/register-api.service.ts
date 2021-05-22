@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class RegisterApiService {
 
   public constructor(
-    public readonly api: ApiService
+    private readonly api: ApiService
   ) { }
 
   public register(request: RegisterRequestModel): Observable<RegisterResponseModel> {

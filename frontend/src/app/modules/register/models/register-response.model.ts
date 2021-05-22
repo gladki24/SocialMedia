@@ -13,5 +13,4 @@ export class RegisterResponseModel {
       this.role = res.role;
     }
   }
-
 }

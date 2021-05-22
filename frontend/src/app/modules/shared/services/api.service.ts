@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  private readonly url = 'localhost:8085/social-media/'
+  private readonly url = 'http://localhost:8085/social-media'
 
   public constructor(
     private readonly httpClient: HttpClient
