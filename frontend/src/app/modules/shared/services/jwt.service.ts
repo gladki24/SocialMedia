@@ -15,6 +15,10 @@ export class JwtService {
     return !isNullOrEmpty(this.getToken());
   }
 
+  public clearToken(): void {
+    this.localStorageService.clear('token');
+  }
+
   public setToken(jwt: string): void {
     this.localStorageService.set('token', jwt);
   }

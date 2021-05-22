@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Icon } from '../../../shared/enums/icon.enum';
 import { NavigationBuilderService } from './services/navigation-builder.service';
 import { NavigationLinkViewModel } from './models/navigation-link-view.model';
+import {JwtService} from "../../../shared/services/jwt.service";
+import {AlertService} from "../../../shared/services/alert.service";
 
 @Component({
   selector: 'ms-navigation',
@@ -17,7 +19,9 @@ export class NavigationComponent implements OnInit {
   public links: NavigationLinkViewModel[];
 
   public constructor(
-    private readonly _builder: NavigationBuilderService
+    private readonly _builder: NavigationBuilderService,
+    private readonly _jwtService: JwtService,
+    private readonly _alertService: AlertService
   ) {
   }
 
@@ -41,4 +45,8 @@ export class NavigationComponent implements OnInit {
       .build();
   }
 
+  public logout(): void {
+    this._alertService.notifyInfo('Wylogowanie', 'Użytkownik został wylogowany');
+    this._jwtService.clearToken();
+  }
 }
