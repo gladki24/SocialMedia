@@ -9,6 +9,7 @@ import { UserComponent } from './modules/main/components/user/user.component';
 import { NotificationsComponent } from './modules/main/components/notifications/notifications.component';
 import { HomeComponent } from './modules/main/components/home/home.component';
 import { MsLoginComponent } from './modules/login/components/login/login.component';
+import { MsRegisterComponent } from './modules/register/components/register/register.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
         component: UserComponent
       }
     ]
+  },
+  {
+    path: 'register',
+    component: MsRegisterComponent
   },
   {
     path: 'login',

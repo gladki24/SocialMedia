@@ -18,11 +18,11 @@
                             <div class="text-center text-muted mb-4">
                                 <small>Zaloguj się</small>
                             </div>
-                            <form role="form">
+                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                                 <div class="form-group mb-3" [ngClass]="{'focused':focus===true}">
                                     <div class="input-group input-group-alternative">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                            <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                                         </div>
                                         <input msInput placeholder="Login" type="text">
                                     </div>
@@ -43,6 +43,7 @@
                                 </div>
                                 <div class="text-center">
                                     <button
+                                            type="submit"
                                             msButton
                                             size="medium"
                                             color="warning"
@@ -56,12 +57,9 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-6">
-                            <a class="text-light">
-                                <small>Zapomniałem hasła</small>
-                            </a>
                         </div>
                         <div class="col-6 text-right">
-                            <a class="text-light">
+                            <a class="text-light" routerLink="/register">
                                 <small>Utwórz nowe konto</small>
                             </a>
                         </div>

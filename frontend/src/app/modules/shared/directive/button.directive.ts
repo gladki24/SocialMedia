@@ -38,7 +38,6 @@ export class ButtonDirective {
 
   @HostBinding('class.btn-primary')
   public get isPrimary(): boolean {
-    console.log('hi');
     return this.color === 'primary' && !this.isOutline;
   }
 

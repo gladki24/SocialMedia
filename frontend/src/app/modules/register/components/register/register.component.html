@@ -1,0 +1,113 @@
+<main class="h-100">
+    <section class="section section-shaped section-lg full-height">
+        <div class="shape shape-style-1 bg-gradient-default">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="container pt-lg-md">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="card bg-secondary shadow border-0">
+                        <div class="card-body px-lg-5 py-lg-5">
+                            <div class="text-center text-muted mb-4">
+                                <small>Podaj dane do utworzenia konta</small>
+                            </div>
+                            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                                <div class="form-group" [ngClass]="{'focused':focus===true}">
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                                        </div>
+                                        <input
+                                                formControlName="name"
+                                                class="form-control"
+                                                placeholder="Nazwa"
+                                                type="text"
+                                                (focus)="focus=true"
+                                                (blur)="focus=false"
+                                                required
+                                        >
+                                    </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-user-run"></i></span>
+                                        </div>
+                                        <input
+                                                formControlName="login"
+                                                class="form-control"
+                                                placeholder="Identyfikator"
+                                                type="text"
+                                                (focus)="focus1=true"
+                                                (blur)="focus1=false"
+                                                required
+                                        >
+                                    </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{'focused':focus2===true}">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                        </div>
+
+                                        <input
+                                                formControlName="password"
+                                                class="form-control"
+                                                placeholder="Hasło"
+                                                type="password"
+                                                (focus)="focus2=true"
+                                                (blur)="focus2=false"
+                                                required
+                                        >
+                                    </div>
+                                </div>
+                                <div class="row my-4">
+                                    <div class="col-12">
+                                        <div class="custom-control custom-control-alternative custom-checkbox">
+                                            <input
+                                                    required
+                                                    formControlName="acceptedRules"
+                                                    class="custom-control-input"
+                                                    id="customCheckRegister"
+                                                    type="checkbox">
+                                            <label class="custom-control-label" for="customCheckRegister">
+                                <span>Zgadzam się z
+                                    <a href="javascript:void(0)">zasadami wspólnego Yoodle'owania</a>
+                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button
+                                            type="submit"
+                                            msButton
+                                            size="medium"
+                                            color="primary"
+                                            class="my-4"
+                                    >Utwórz konto</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                        </div>
+                        <div class="col-6 text-right">
+                            <a class="text-light" routerLink="/login">
+                                <small>Zaloguj się</small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
