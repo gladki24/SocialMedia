@@ -10,11 +10,13 @@ import { NotificationsComponent } from './modules/main/components/notifications/
 import { HomeComponent } from './modules/main/components/home/home.component';
 import { MsLoginComponent } from './modules/login/components/login/login.component';
 import { MsRegisterComponent } from './modules/register/components/register/register.component';
+import {AuthGuard} from "./modules/main/guards/auth.guard";
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
