@@ -1,5 +1,5 @@
 import {Injectable, TemplateRef} from '@angular/core';
-import {AlertModel} from "../models/alertModel";
+import {AlertModel} from "../models/alert-model";
 import {AlertType} from "../enums/alert-type.enum";
 
 @Injectable({

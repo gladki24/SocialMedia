@@ -20,7 +20,7 @@ import {JwtInterceptor} from "./modules/shared/interceptors/jwt.interceptor";
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
-      multi: true
+      multi: true,
     }
   ],
   bootstrap: [ AppComponent ]

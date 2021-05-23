@@ -11,6 +11,7 @@ import { HomeComponent } from './modules/main/components/home/home.component';
 import { MsLoginComponent } from './modules/login/components/login/login.component';
 import { MsRegisterComponent } from './modules/register/components/register/register.component';
 import {AuthGuard} from "./modules/main/guards/auth.guard";
+import {ProfileResolver} from "./modules/main/components/user/resolvers/profile.resolver";
 
 const routes: Routes = [
   {
@@ -33,7 +34,10 @@ const routes: Routes = [
       },
       {
         path: 'profile',
-        component: UserComponent
+        component: UserComponent,
+        resolve: {
+          profile: ProfileResolver
+        }
       }
     ]
   },
