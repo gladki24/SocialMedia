@@ -9,3 +9,7 @@ export function isEmpty(value: any[]): boolean {
 export function isNullOrEmpty(value: string): boolean {
   return value === null || value === undefined || value.length === 0;
 }
+
+export function createDateIfDefined(value: string | Date): Date {
+  return isDefined(value) ? new Date(value) : null;
+}

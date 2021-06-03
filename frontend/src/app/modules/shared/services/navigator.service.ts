@@ -17,4 +17,8 @@ export class NavigatorService {
   public main(): void {
     this.router.navigate(['/']);
   }
+
+  public profile(): void {
+    this.router.navigate(['/profile']);
+  }
 }

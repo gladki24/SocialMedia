@@ -9,6 +9,8 @@ import { UserComponent } from './components/user/user.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NavigationLinkComponent } from './components/navigation/components/navigation-link/navigation-link.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { YoodleInputComponent } from './components/yoodle-input/yoodle-input.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { NotificationsComponent } from './components/notifications/notifications
     NavigationComponent,
     NavigationLinkComponent,
     NotificationsComponent,
+    YoodleInputComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule,
-    TemplateModule
+    TemplateModule,
+    ReactiveFormsModule
   ],
     exports: [
         MainComponent,
