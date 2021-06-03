@@ -11,7 +11,7 @@ export class Tweet {
         if (isDefined(res)) {
             this.id = res.id;
             this.link = res.link;
-            this.text = res.link;
+            this.text = res.text;
             this.comments = [];
             this.emotions = [];
         }

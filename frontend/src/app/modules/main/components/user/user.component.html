@@ -1,5 +1,39 @@
-<div class="card">
-    <div class="card-body">
-        Ale by tutaj siadł profil użytkownika
+<ms-card class="mt-2">
+    <div header>
+        Dane użytkownika
     </div>
-</div>
+
+    <div body class="row">
+        <div class="col-6">
+            <p>
+                <span class="font-weight-bold">Nazwa:</span>
+                {{ profile.account.username }}</p>
+
+            <p>
+                <span class="font-weight-bold">Konto utworzono:</span>
+                {{ profile.createdDate | date}}</p>
+        </div>
+
+        <div class="col-6">
+            <p>
+                <span class="font-weight-bold">Ilość yoodle:</span>
+                {{ profile.tweets.length }}
+            </p>
+        </div>
+    </div>
+</ms-card>
+
+<ms-card class="mt-2">
+    <div header>
+        Moje Yoodle
+    </div>
+
+    <div body>
+        <ms-card class="mt-2" *ngFor="let yoodle of profile.tweets">
+            <div body>
+                {{ yoodle.text }}
+            </div>
+        </ms-card>
+    </div>
+
+</ms-card>

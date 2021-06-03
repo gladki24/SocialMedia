@@ -12,6 +12,7 @@ import { IconComponent } from './components/icon/icon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertsComponent } from './components/alerts/alerts.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
@@ -25,20 +26,22 @@ import { AlertComponent } from './components/alert/alert.component';
     TabsComponent,
     IconComponent,
     AlertsComponent,
-    AlertComponent
+    AlertComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     NgbModule
   ],
-    exports: [
-        ButtonDirective,
-        LinkDirective,
-        IconComponent,
-        InputDirective,
-        AlertsComponent
-    ]
+  exports: [
+    ButtonDirective,
+    LinkDirective,
+    IconComponent,
+    InputDirective,
+    AlertsComponent,
+    CardComponent
+  ]
 })
 export class  SharedModule {
 }

@@ -15,7 +15,7 @@ export class Profile {
             this.createdDate = res.createdDate;
             this.identifier = res.identifier;
             this.account = new Account(res.account);
-            this.tweets = res.tweets.map(tweet => new Tweet(tweet));
+            this.tweets = res.tweets.map(tweet => new Tweet(tweet)).reverse();
         }
     }
 }
