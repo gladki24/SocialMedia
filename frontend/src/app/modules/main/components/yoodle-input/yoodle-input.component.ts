@@ -27,7 +27,7 @@ export class YoodleInputComponent {
     const text = this.yoodleForm.value['text'];
     this._service.create(text).subscribe(result => {
       this._alertService.notifySuccess('Super!', 'Właśnie za yoodlowałeś. Teraz tylko trzeba zaczekać na reakcje :)');
-      this._navigatorService.profile();
+      this._navigatorService.yoodle(result.link);
     });
     this.yoodleClicked.emit();
   }

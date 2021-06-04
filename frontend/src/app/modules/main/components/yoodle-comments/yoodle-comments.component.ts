@@ -36,6 +36,12 @@ export class YoodleCommentsComponent extends MainActivityBase {
   public comment(): void {
     const text = this.commentForm.value['text'];
 
+    this.commentForm.setValue({
+      text: ''
+    }, {
+      emitEvent: false
+    });
+
     this.yoodleService.comment(text, this.yoodle.link).subscribe(() => {
       this.alertService.notifySuccess('Super', 'Skomentowałeś tego Yoodla!');
       this.navigator.yoodle(this.yoodle.link);

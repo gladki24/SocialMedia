@@ -34,11 +34,15 @@ export class YoodleApiService {
       )
   }
 
-  public getFollowingFeed(): Observable<any> {
-    return this._apiService.get(this._url + 'feed');
+  public getFollowingFeed(): Observable<Tweet[]> {
+    return this._apiService.get(this._url + 'feed').pipe(
+        map(res => res.map(tweet => new Tweet(tweet)))
+    );
   }
 
-  public getUserFeed(): Observable<any> {
-    return this._apiService.get(this._url + 'my/feed');
+  public getUserFeed(): Observable<Tweet[]> {
+    return this._apiService.get(this._url + 'my/feed').pipe(
+        map(res => res.map(tweet => new Tweet(tweet)))
+    );
   }
 }

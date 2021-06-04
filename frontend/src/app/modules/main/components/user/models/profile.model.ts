@@ -18,4 +18,8 @@ export class Profile {
             this.tweets = res.tweets.map(tweet => new Tweet(tweet)).reverse();
         }
     }
+
+    public get tweetCount(): number {
+        return this.tweets.length;
+    }
 }

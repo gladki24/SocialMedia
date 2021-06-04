@@ -21,14 +21,23 @@
 
 <ms-card class="mt-2">
     <div header>
-        Moje Yoodle
+        Yoodle użytkownika
     </div>
 
     <div body>
 
-        <div *ngFor="let yoodle of profile.tweets" class="mt-2">
-            <ms-yoodle [yoodle]="yoodle" [readOnly]="true"></ms-yoodle>
-        </div>
+        <ng-container *ngIf="profile.tweetCount > 0; else emptyTemplate">
+            <div *ngFor="let yoodle of profile.tweets" class="mt-2">
+                <ms-yoodle [yoodle]="yoodle" [readOnly]="true"></ms-yoodle>
+            </div>
+        </ng-container>
+
+        <ng-template #emptyTemplate>
+            <div class="d-flex">
+                <p><span class="font-weight-bold"> Jakoś tutaj pusto</span></p>
+                <p><ms-icon [icon]="Icon.Sad"></ms-icon></p>
+            </div>
+        </ng-template>
     </div>
 
 </ms-card>

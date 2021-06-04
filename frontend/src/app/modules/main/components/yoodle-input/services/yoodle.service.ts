@@ -30,4 +30,12 @@ export class YoodleService {
         map(res => new Tweet(res))
     )
   }
+
+  public getUserFeed(): Observable<Tweet[]> {
+    return this._apiService.getUserFeed();
+  }
+
+  public getFeed(): Observable<Tweet[]> {
+    return this._apiService.getFollowingFeed();
+  }
 }

@@ -14,6 +14,10 @@ import {AuthGuard} from "./modules/main/guards/auth.guard";
 import {ProfileResolver} from "./modules/main/components/user/resolvers/profile.resolver";
 import {YoodleCommentsComponent} from "./modules/main/components/yoodle-comments/yoodle-comments.component";
 import {YoodleCommentsResolver} from "./modules/main/components/yoodle-comments/resolvers/yoodle-comments.resolver";
+import {HomeResolver} from "./modules/main/components/home/resolvers/home.resolver";
+import {UsersComponent} from "./modules/main/components/users/users.component";
+import {UsersResolver} from "./modules/main/components/users/resolvers/users.resolver";
+import {UserResolver} from "./modules/main/components/user/resolvers/user.resolver";
 
 const routes: Routes = [
   {
@@ -28,7 +32,10 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        resolve: {
+          feed: HomeResolver
+        }
       },
       {
         path: 'notifications',
@@ -40,6 +47,14 @@ const routes: Routes = [
         resolve: {
           profile: ProfileResolver
         },
+        runGuardsAndResolvers: 'always',
+      },
+      {
+        path: 'users/:id',
+        component: UserComponent,
+        resolve: {
+          profile: UserResolver
+        },
         runGuardsAndResolvers: 'always'
       },
       {
@@ -47,6 +62,14 @@ const routes: Routes = [
         component: YoodleCommentsComponent,
         resolve: {
           yoodle: YoodleCommentsResolver
+        },
+        runGuardsAndResolvers: 'always'
+      },
+      {
+        path: 'users',
+        component: UsersComponent,
+        resolve: {
+          users: UsersResolver
         },
         runGuardsAndResolvers: 'always'
       }

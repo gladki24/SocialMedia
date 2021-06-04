@@ -21,6 +21,9 @@ databaseChangeLog:
               - column:
                   name: LINK
                   value: '5WRqhll4zCbPj6GYPNvK'
+              - column:
+                  name: CREATED_DATE
+                  value: to_date('2021-03-31', 'yyyy-mm-dd')
         - insert:
             tableName: TWEET
             columns:
@@ -39,3 +42,6 @@ databaseChangeLog:
               - column:
                   name: LINK
                   value: 'PF64tL9VaY4489ZlXKC9'
+              - column:
+                  name: CREATED_DATE
+                  value: to_date('2021-03-31', 'yyyy-mm-dd')

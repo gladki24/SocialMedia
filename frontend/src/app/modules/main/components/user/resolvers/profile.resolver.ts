@@ -6,7 +6,7 @@ import {
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import {Profile} from "../models/profile.model";
-import {ProfileApiService} from "../services/profile-api.service";
+import {UserApiService} from "../services/user-api.service";
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +14,11 @@ import {ProfileApiService} from "../services/profile-api.service";
 export class ProfileResolver implements Resolve<Profile> {
 
   public constructor(
-      private profileService: ProfileApiService
+      private readonly profileService: UserApiService
   ) {
   }
 
   public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Profile> {
-    return this.profileService.get();
+    return this.profileService.getUserProfile();
   }
 }

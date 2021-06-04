@@ -1,6 +1,5 @@
 package com.socialmedia.domain.tweet;
 
-import com.socialmedia.application.tweet.LinkGenerator;
 import com.socialmedia.domain.common.Link;
 import com.socialmedia.domain.common.Text;
 import com.socialmedia.domain.emotions.Emotion;
@@ -9,8 +8,10 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +45,9 @@ public class Tweet {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "PARENT_TWEET_ID")
     private List<Tweet> comments = new ArrayList<>();
+
+    @CreatedDate
+    private LocalDateTime createdDate;
 
     public Tweet(Text text, User user) {
         this.text = text;

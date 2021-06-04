@@ -32,6 +32,9 @@ databaseChangeLog:
               - column:
                   name: LINK
                   type: NVARCHAR(20)
+              - column:
+                  name: CREATED_DATE
+                  type: DATETIME
         - createSequence:
             sequenceName: SEQ_TWEET
             startValue: 1

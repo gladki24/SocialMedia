@@ -10,10 +10,12 @@ import {NavigationComponent} from './components/navigation/navigation.component'
 import {NavigationLinkComponent} from './components/navigation/components/navigation-link/navigation-link.component';
 import {NotificationsComponent} from './components/notifications/notifications.component';
 import {YoodleInputComponent} from './components/yoodle-input/yoodle-input.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {YoodleModalComponent} from './components/yoodle-modal/yoodle-modal.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { YoodleCommentsComponent } from './components/yoodle-comments/yoodle-comments.component';
+import { UsersComponent } from './components/users/users.component';
+import {NgbTooltipModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
     declarations: [
@@ -26,6 +28,7 @@ import { YoodleCommentsComponent } from './components/yoodle-comments/yoodle-com
         YoodleInputComponent,
         YoodleModalComponent,
         YoodleCommentsComponent,
+        UsersComponent,
     ],
     imports: [
         CommonModule,
@@ -33,7 +36,9 @@ import { YoodleCommentsComponent } from './components/yoodle-comments/yoodle-com
         RouterModule,
         TemplateModule,
         ReactiveFormsModule,
-        MatDialogModule
+        MatDialogModule,
+        FormsModule,
+        NgbTooltipModule
     ],
     exports: [
         MainComponent,

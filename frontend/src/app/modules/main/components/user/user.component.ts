@@ -3,6 +3,7 @@ import { MainActivityBase } from '../../classes/main-activity.abstract';
 import {ProfileService} from "./services/profile.service";
 import { ActivatedRoute } from '@angular/router';
 import { Profile } from './models/profile.model';
+import {Icon} from "../../../shared/enums/icon.enum";
 
 @Component({
   selector: 'ms-user',
@@ -14,6 +15,7 @@ import { Profile } from './models/profile.model';
 })
 export class UserComponent extends MainActivityBase {
 
+  public readonly Icon = Icon;
   public profile: Profile;
 
   public constructor(

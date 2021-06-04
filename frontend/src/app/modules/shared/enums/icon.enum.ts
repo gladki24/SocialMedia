@@ -7,5 +7,8 @@ export enum Icon {
   Dislike = 'thumb_down',
   Funny = 'sentiment_very_satisfied',
   TakeCare = 'waving_hand',
-  Comments = 'comment_bank'
+  Comments = 'comment_bank',
+  Search = 'search',
+  Link = 'link',
+  Sad = 'sentiment_very_dissatisfied'
 }
