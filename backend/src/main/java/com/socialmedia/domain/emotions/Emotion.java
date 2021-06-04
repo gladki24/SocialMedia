@@ -1,12 +1,13 @@
 package com.socialmedia.domain.emotions;
 
 import com.socialmedia.domain.common.EmotionType;
+import com.socialmedia.domain.tweet.Tweet;
 import com.socialmedia.domain.user.User;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -26,16 +27,20 @@ public class Emotion {
     @Enumerated(value = EnumType.STRING)
     private EmotionType type;
 
-    @CreatedDate
+    @CreationTimestamp
     private LocalDateTime createdDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")
     private User user;
 
-    public Emotion(EmotionType type, User user) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Tweet tweet;
+
+    public Emotion(EmotionType type, User user, Tweet tweet) {
         this.type = type;
         this.user = user;
+        this.tweet = tweet;
     }
 
 }

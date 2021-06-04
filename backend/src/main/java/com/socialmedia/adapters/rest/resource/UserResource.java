@@ -4,9 +4,7 @@ import com.socialmedia.application.user.UserService;
 import com.socialmedia.domain.user.dto.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +23,16 @@ public class UserResource {
     @GetMapping("/following/all")
     public List<UserDto> currentUserListOfFollowingUsers() {
         return userService.currentUserListOfFollowingUsers();
+    }
+
+    @PostMapping("/follow/{identifier}")
+    public void followUser(@PathVariable String identifier) throws Exception {
+        userService.followUser(identifier);
+    }
+
+    @PostMapping("/unfollow/{identifier}")
+    public void unfollowUser(@PathVariable String identifier) {
+        userService.unfollowUser(identifier);
     }
 
     @GetMapping("/profile")

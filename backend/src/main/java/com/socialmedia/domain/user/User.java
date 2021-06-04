@@ -6,14 +6,12 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "USER")
@@ -31,7 +29,7 @@ public class User {
     @AttributeOverride(name = "value", column = @Column(name = "IDENTIFIER"))
     private Identifier identifier;
 
-    @CreatedDate
+    @CreationTimestamp
     private LocalDateTime createdDate;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -44,23 +42,14 @@ public class User {
     )
     private List<Tweet> tweets = new ArrayList<>();
 
-    @OneToMany(mappedBy="from")
+    @OneToMany(mappedBy = "from")
     private List<Following> following;
 
-    @OneToMany(mappedBy="to")
+    @OneToMany(mappedBy = "to")
     private List<Following> followers;
 
     public User(Identifier identifier) {
         this.identifier = identifier;
     }
 
-    public void addTweet(Tweet tweet) {
-        tweets.add(tweet);
-        tweet.setUser(this);
-    }
-
-    public void removeTweet(Tweet tweet) {
-        tweets.remove(tweet);
-        tweet.setUser(null);
-    }
 }

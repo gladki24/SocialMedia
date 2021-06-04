@@ -14,6 +14,8 @@ public class TweetDto {
     private Long id;
     private String text;
     private String link;
+    private String parentTweetLink;
+    private TweetAuthorDto author;
     private List<EmotionDto> emotions;
     private List<TweetDto> comments;
     private LocalDateTime createdDate;
