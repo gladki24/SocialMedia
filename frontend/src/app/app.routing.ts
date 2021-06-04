@@ -12,6 +12,8 @@ import { MsLoginComponent } from './modules/login/components/login/login.compone
 import { MsRegisterComponent } from './modules/register/components/register/register.component';
 import {AuthGuard} from "./modules/main/guards/auth.guard";
 import {ProfileResolver} from "./modules/main/components/user/resolvers/profile.resolver";
+import {YoodleCommentsComponent} from "./modules/main/components/yoodle-comments/yoodle-comments.component";
+import {YoodleCommentsResolver} from "./modules/main/components/yoodle-comments/resolvers/yoodle-comments.resolver";
 
 const routes: Routes = [
   {
@@ -37,7 +39,16 @@ const routes: Routes = [
         component: UserComponent,
         resolve: {
           profile: ProfileResolver
-        }
+        },
+        runGuardsAndResolvers: 'always'
+      },
+      {
+        path: 'yoodle/:link',
+        component: YoodleCommentsComponent,
+        resolve: {
+          yoodle: YoodleCommentsResolver
+        },
+        runGuardsAndResolvers: 'always'
       }
     ]
   },
@@ -65,7 +76,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(routes, {
-      useHash: true
+      useHash: true,
+      onSameUrlNavigation: 'reload'
     })
   ],
   exports: [],

@@ -1,6 +1,11 @@
 export enum Icon {
-  Logo = 'ni-satisfied',
-  Home = 'ni-world',
-  Notifications = 'ni-notification-70',
-  Profile = 'ni-circle-08',
+  Logo = 'filter_vintage',
+  Home = 'home',
+  Notifications = 'circle_notifications',
+  Profile = 'account_circle',
+  Like = 'thumb_up',
+  Dislike = 'thumb_down',
+  Funny = 'sentiment_very_satisfied',
+  TakeCare = 'waving_hand',
+  Comments = 'comment_bank'
 }

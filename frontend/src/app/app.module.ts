@@ -6,6 +6,7 @@ import { LoginModule } from './modules/login/login.module';
 import { RegisterModule } from './modules/register/register.module';
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {JwtInterceptor} from "./modules/shared/interceptors/jwt.interceptor";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {JwtInterceptor} from "./modules/shared/interceptors/jwt.interceptor";
     MainModule,
     LoginModule,
     RegisterModule,
-    TemplateModule
+    TemplateModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

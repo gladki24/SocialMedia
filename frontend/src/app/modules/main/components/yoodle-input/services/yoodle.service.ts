@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { YoodleApiService } from '../../../../shared/services/yoodle-api.service';
 import { YoodleRequestFactoryService } from '../../../../shared/services/yoodle-request-factory.service';
 import { Observable } from 'rxjs';
-import { CreateYoodleResponse } from '../../../../shared/models/yoodle/create-yoodle-response.model';
+import {Tweet} from "../../../../shared/models/tweet.model";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,19 @@ export class YoodleService {
     private readonly _requestFactory: YoodleRequestFactoryService
   ) { }
 
-  public create(text: string): Observable<CreateYoodleResponse> {
+  public create(text: string): Observable<Tweet> {
     const request = this._requestFactory.getCreateRequest(null, text);
 
-    return this._apiService.create(request);
+    return this._apiService.create(request).pipe(
+        map(res => new Tweet(res))
+    );
+  }
+
+  public comment(text: string, parentId: string): Observable<Tweet> {
+    const request = this._requestFactory.getCreateRequest(parentId, text);
+
+    return this._apiService.create(request).pipe(
+        map(res => new Tweet(res))
+    )
   }
 }

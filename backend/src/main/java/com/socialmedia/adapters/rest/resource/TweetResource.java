@@ -37,4 +37,9 @@ public class TweetResource {
         return tweetService.createTweet(command);
     }
 
+    @GetMapping("/get/{link}")
+    public TweetDto getTweet(@PathVariable String link) {
+        return tweetService.getTweet(link);
+    }
+
 }

@@ -2,7 +2,7 @@
     <div class="card-body">
         <h2 class="mb-3">
             <a class="p-0" routerLink="/" msLink>
-                <ms-icon size="30px" [icon]="Icon.Logo"></ms-icon>
+                <ms-icon size="60px" [icon]="Icon.Logo"></ms-icon>
             </a>
         </h2>
 
@@ -11,7 +11,7 @@
                 [link]="link"
         ></ms-navigation-link>
 
-        <button msButton size="medium" color="primary" class="w-100 mt-3">
+        <button msButton size="medium" color="primary" class="w-100 mt-3" (click)="openYoodleModal()">
             Jodłuj
         </button>
 

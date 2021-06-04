@@ -54,6 +54,15 @@ public class TweetService {
                 .collect(Collectors.toList());
     }
 
+    public TweetDto getTweet(String link) {
+        TweetDto tweet = tweetRepository
+                .findByLink(Link.of(link))
+                .map(mapper::tweet)
+                .orElseThrow(NoSuchElementException::new);
+
+        return tweet;
+    }
+
     @Transactional
     public TweetDto createTweet(TweetCommand command) {
         User user = userService.getCurrentUserAccount();

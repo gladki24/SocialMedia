@@ -14,7 +14,7 @@ import { Profile } from './models/profile.model';
 })
 export class UserComponent extends MainActivityBase {
 
-  public readonly profile: Profile;
+  public profile: Profile;
 
   public constructor(
       private readonly service: ProfileService,
@@ -22,7 +22,9 @@ export class UserComponent extends MainActivityBase {
   ) {
     super('Profil');
 
-    this.profile = this.route.snapshot.data['profile'];
+    this.route.data.subscribe(data => {
+      this.profile = data['profile'];
+    });
   }
 
 }

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { CreateYoodleRequestModel } from '../models/yoodle/create-yoodle-request.model';
 import { CreateYoodleResponse } from '../models/yoodle/create-yoodle-response.model';
 import { map } from 'rxjs/operators';
+import {Tweet} from "../models/tweet.model";
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +21,16 @@ export class YoodleApiService {
     return this._apiService.get(this._url + 'all/' + id);
   }
 
-  public create(request: CreateYoodleRequestModel): Observable<any> {
+  public get(link: string): Observable<Tweet> {
+    return this._apiService.get(this._url + 'get/' + link).pipe(
+        map(res => new Tweet(res))
+    )
+  }
+
+  public create(request: CreateYoodleRequestModel): Observable<Tweet> {
     return this._apiService.post(this._url + 'create', request)
       .pipe(
-        map(res => new CreateYoodleResponse(res))
+        map(res => new Tweet(res))
       )
   }
 

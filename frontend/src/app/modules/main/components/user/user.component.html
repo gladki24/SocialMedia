@@ -8,10 +8,6 @@
             <p>
                 <span class="font-weight-bold">Nazwa:</span>
                 {{ profile.account.username }}</p>
-
-            <p>
-                <span class="font-weight-bold">Konto utworzono:</span>
-                {{ profile.createdDate | date}}</p>
         </div>
 
         <div class="col-6">
@@ -29,11 +25,10 @@
     </div>
 
     <div body>
-        <ms-card class="mt-2" *ngFor="let yoodle of profile.tweets">
-            <div body>
-                {{ yoodle.text }}
-            </div>
-        </ms-card>
+
+        <div *ngFor="let yoodle of profile.tweets" class="mt-2">
+            <ms-yoodle [yoodle]="yoodle" [readOnly]="true"></ms-yoodle>
+        </div>
     </div>
 
 </ms-card>

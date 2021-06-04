@@ -13,6 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlertsComponent } from './components/alerts/alerts.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { CardComponent } from './components/card/card.component';
+import { YoodleComponent } from './components/yoodle/yoodle.component';
+import { EmotionsComponent } from './components/emotions/emotions.component';
+import {MatIconModule} from "@angular/material/icon";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -27,21 +31,26 @@ import { CardComponent } from './components/card/card.component';
     IconComponent,
     AlertsComponent,
     AlertComponent,
-    CardComponent
+    CardComponent,
+    YoodleComponent,
+    EmotionsComponent
   ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    NgbModule
-  ],
-  exports: [
-    ButtonDirective,
-    LinkDirective,
-    IconComponent,
-    InputDirective,
-    AlertsComponent,
-    CardComponent
-  ]
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        NgbModule,
+        MatIconModule,
+        RouterModule
+    ],
+    exports: [
+        ButtonDirective,
+        LinkDirective,
+        IconComponent,
+        InputDirective,
+        AlertsComponent,
+        CardComponent,
+        YoodleComponent
+    ]
 })
 export class  SharedModule {
 }

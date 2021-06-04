@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-2">
+        <button
+                [disabled]="disabled"
+                color="neutral"
+                class="w-100 d-flex"
+                ngbTooltip="Fajne!"
+                (click)="emotionClicked.emit(Emotion.Like)"
+        >
+            <ms-icon
+                    title="Fajne!"
+                    [icon]="Icon.Like"
+            ></ms-icon>
+
+            <ms-badge [text]="tweet.likeCount.toString()"></ms-badge>
+        </button>
+    </div>
+
+    <div class="col-2">
+        <button
+                [disabled]="disabled"
+                color="neutral"
+                class="w-100 d-flex"
+                ngbTooltip="Nie podoba mi się"
+                (click)="emotionClicked.emit(Emotion.Dislike)"
+        >
+            <ms-icon
+                    title="Nie podoba mi się"
+                    [icon]="Icon.Dislike"
+            ></ms-icon>
+
+            <ms-badge [text]="tweet.dislikeCount.toString()"></ms-badge>
+        </button>
+    </div>
+
+    <div class="col-2">
+        <button
+                [disabled]="disabled"
+                color="neutral"
+                class="w-100 d-flex"
+                ngbTooltip="Ale to zabawne"
+                (click)="emotionClicked.emit(Emotion.Funny)"
+        >
+            <ms-icon
+                    title="Ale to zabawne"
+                    [icon]="Icon.Funny"
+            ></ms-icon>
+
+            <ms-badge [text]="tweet.funnyCount.toString()"></ms-badge>
+        </button>
+    </div>
+
+    <div class="col-2">
+        <button
+                [disabled]="disabled"
+                color="neutral"
+                class="w-100 d-flex"
+                ngbTooltip="Trzymaj się tam cieplutko"
+                (click)="emotionClicked.emit(Emotion.TakeCare)"
+        >
+            <ms-icon
+                    title="Trzymaj się tam cieplutko"
+                    [icon]="Icon.TakeCare"
+            ></ms-icon>
+            <ms-badge [text]="tweet.takeCareCount.toString()"></ms-badge>
+        </button>
+    </div>
+
+    <div class="col-2"></div>
+
+    <div class="col-2">
+        <div class="pt-2">
+            <a class="text" [routerLink]="'/yoodle/' + tweet.link">
+                <div class="d-flex justify-content-end">
+                    <ms-badge [text]="tweet.commentCount.toString()"></ms-badge>
+                    <ms-icon
+                            ngbTooltip="Komentarze"
+                            title="Komentarze"
+                            [icon]="Icon.Comments"
+                    ></ms-icon>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

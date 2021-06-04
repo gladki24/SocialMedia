@@ -1,4 +1,4 @@
-import {Component, Input, Output, TemplateRef} from '@angular/core';
+import {Component, Input, Output} from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import {AlertType} from "../../enums/alert-type.enum";
 import {AlertCustomTemplateParams} from "../../models/alert-custom-template-params.model";

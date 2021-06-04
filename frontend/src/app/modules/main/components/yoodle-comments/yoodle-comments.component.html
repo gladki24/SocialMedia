@@ -1,0 +1,19 @@
+<ms-yoodle
+        [yoodle]="yoodle"
+></ms-yoodle>
+
+<div class="card mt-1 mb-4">
+    <form (ngSubmit)="comment()" [formGroup]="commentForm">
+        <div class="card-header">
+            Skomentuj
+        </div>
+
+        <div class="card-body d-flex">
+            <input type="text" msInput placeholder="Twój komentarz" formControlName="text">
+
+            <button msButton color="success" class="ml-5" type="submit">Skomentuj</button>
+        </div>
+    </form>
+</div>
+
+<ms-yoodle [yoodle]="comment" class="ml-5 mb-2" *ngFor="let comment of yoodle.comments"></ms-yoodle>

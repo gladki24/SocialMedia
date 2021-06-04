@@ -1,0 +1,13 @@
+<ms-card>
+    <div header>
+        <ms-emotions
+                [tweet]="yoodle"
+                [disabled]="readOnly"
+                (emotionClicked)="saveEmotion($event)"
+        ></ms-emotions>
+    </div>
+
+    <div body>
+        {{ yoodle.text }}
+    </div>
+</ms-card>

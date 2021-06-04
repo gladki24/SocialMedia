@@ -21,4 +21,8 @@ export class NavigatorService {
   public profile(): void {
     this.router.navigate(['/profile']);
   }
+
+  public yoodle(link: string): void {
+    this.router.navigate(['/yoodle', link])
+  }
 }
