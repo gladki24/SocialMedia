@@ -55,12 +55,10 @@ public class TweetService {
     }
 
     public TweetDto getTweet(String link) {
-        TweetDto tweet = tweetRepository
+        return tweetRepository
                 .findByLink(Link.of(link))
                 .map(mapper::tweet)
                 .orElseThrow(NoSuchElementException::new);
-
-        return tweet;
     }
 
     @Transactional

@@ -8,7 +8,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -27,6 +27,9 @@ public class Tweet {
     @SequenceGenerator(name = "tweet_sequence", sequenceName = "SEQ_TWEET", allocationSize = 1)
     private Long id;
 
+    @Column(name = "PARENT_TWEET_LINK")
+    private String parentTweetLink;
+
     @Embedded
     @AttributeOverride(name = "value", column = @Column(name = "TEXT"))
     private Text text;
@@ -43,10 +46,10 @@ public class Tweet {
     private List<Emotion> emotions = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "PARENT_TWEET_ID")
+    @JoinColumn(name = "PARENT_TWEET_LINK")
     private List<Tweet> comments = new ArrayList<>();
 
-    @CreatedDate
+    @CreationTimestamp
     private LocalDateTime createdDate;
 
     public Tweet(Text text, User user) {

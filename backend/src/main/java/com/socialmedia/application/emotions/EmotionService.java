@@ -29,7 +29,7 @@ public class EmotionService {
     public EmotionDto create(EmotionCommand command) {
         User user = userService.getCurrentUserAccount();
         Tweet tweet = tweetRepository.findByLink(Link.of(command.getTweetLink())).orElseThrow(NoSuchElementException::new);
-        Emotion emotion = new Emotion(command.getType(), user);
+        Emotion emotion = new Emotion(command.getType(), user, tweet);
         tweet.addEmotion(emotion);
         return mapper.emotion(emotionRepository.save(emotion));
     }

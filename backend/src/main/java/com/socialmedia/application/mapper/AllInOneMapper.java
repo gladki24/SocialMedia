@@ -3,6 +3,7 @@ package com.socialmedia.application.mapper;
 import com.socialmedia.domain.emotions.Emotion;
 import com.socialmedia.domain.emotions.dto.EmotionDto;
 import com.socialmedia.domain.tweet.Tweet;
+import com.socialmedia.domain.tweet.dto.TweetAuthorDto;
 import com.socialmedia.domain.tweet.dto.TweetDto;
 import com.socialmedia.domain.user.Account;
 import com.socialmedia.domain.user.User;
@@ -20,7 +21,11 @@ public interface AllInOneMapper {
 
     @Mapping(target = "text", source = "text.value")
     @Mapping(target = "link", source = "link.value")
+    @Mapping(target = "author", source = "user")
     TweetDto tweet(Tweet tweet);
+
+    @Mapping(target = "identifier", source = "identifier.value")
+    TweetAuthorDto tweetAuthor(User user);
 
     List<EmotionDto> emotions(List<Emotion> emotions);
 

@@ -20,12 +20,12 @@ databaseChangeLog:
                     foreignKeyName: FK_TWEET_USER_ID
                     references: USER(ID)
               - column:
-                  name: PARENT_TWEET_ID
-                  type: BIGINT
+                  name: PARENT_TWEET_LINK
+                  type: NVARCHAR(20)
                   constraints:
                     nullable: true
-                    foreignKeyName: FK_PARENT_TWEET_ID
-                    references: TWEET(ID)
+                    foreignKeyName: FK_PARENT_TWEET_LINK
+                    references: TWEET(LINK)
               - column:
                   name: TEXT
                   type: NVARCHAR(255)
