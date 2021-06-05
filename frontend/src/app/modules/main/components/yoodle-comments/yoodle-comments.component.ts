@@ -6,6 +6,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {YoodleService} from "../yoodle-input/services/yoodle.service";
 import {AlertService} from "../../../shared/services/alert.service";
 import {NavigatorService} from "../../../shared/services/navigator.service";
+import {Profile} from "../user/models/profile.model";
 
 @Component({
   selector: 'ms-yoodle-comments',
@@ -15,6 +16,7 @@ import {NavigatorService} from "../../../shared/services/navigator.service";
 export class YoodleCommentsComponent extends MainActivityBase {
 
   public yoodle: Tweet;
+  public loggedUserProfile: Profile;
 
   public commentForm = new FormGroup({
     text: new FormControl('')
@@ -30,6 +32,7 @@ export class YoodleCommentsComponent extends MainActivityBase {
 
     this.route.data.subscribe(data => {
       this.yoodle = data['yoodle'];
+      this.loggedUserProfile = data['loggedUserProfile'];
     });
   }
 
@@ -46,5 +49,9 @@ export class YoodleCommentsComponent extends MainActivityBase {
       this.alertService.notifySuccess('Super', 'Skomentowałeś tego Yoodla!');
       this.navigator.yoodle(this.yoodle.link);
     });
+  }
+
+  public isLoggedUserYoodle(yoodle: Tweet): boolean {
+    return yoodle.author.id === this.loggedUserProfile.id;
   }
 }

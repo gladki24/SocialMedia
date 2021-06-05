@@ -25,6 +25,16 @@ public class UserResource {
         return userService.currentUserListOfFollowingUsers();
     }
 
+    @GetMapping("/followed/{identifier}")
+    public List<UserDto> userListOfFollowedUsers(@PathVariable String identifier) {
+        return this.userService.userListOfFollowedUsers(identifier);
+    }
+
+    @GetMapping("/following/{identifier}")
+    public List<UserDto> userListOfFollowingUsers(@PathVariable String identifier) {
+        return userService.userListOfFollowingUsers(identifier);
+    }
+
     @PostMapping("/follow/{identifier}")
     public void followUser(@PathVariable String identifier) throws Exception {
         userService.followUser(identifier);

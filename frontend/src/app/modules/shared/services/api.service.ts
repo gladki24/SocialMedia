@@ -17,7 +17,7 @@ export class ApiService {
     return this.httpClient.get<T>(this.prepareUrl(endpoint));
   }
 
-  public post<TResponse = any, TBody = any>(endpoint: string, body: TBody): Observable<TResponse> {
+  public post<TResponse = any, TBody = any>(endpoint: string, body?: TBody): Observable<TResponse> {
     return this.httpClient.post<TResponse>(this.prepareUrl(endpoint), body);
   }
 

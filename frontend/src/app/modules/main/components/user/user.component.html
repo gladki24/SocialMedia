@@ -1,6 +1,6 @@
 <ms-card class="mt-2">
     <div header>
-        Dane użytkownika
+        {{ isLoggedUserProfile ? 'Twój profil' : 'Profil użytkownika' }}
     </div>
 
     <div body class="row">
@@ -8,27 +8,62 @@
             <p>
                 <span class="font-weight-bold">Nazwa:</span>
                 {{ profile.account.username }}</p>
-        </div>
 
-        <div class="col-6">
             <p>
                 <span class="font-weight-bold">Ilość yoodle:</span>
                 {{ profile.tweets.length }}
             </p>
+            <p>
+                <span class="font-weight-bold">Data utworzenia:</span>
+                {{ profile.createdDate | date }}
+            </p>
         </div>
+
+        <div class="col-6">
+            <p>
+                <span class="font-weight-bold">Ilość obserwujących:</span>
+                {{ followingCount }}</p>
+
+            <p>
+                <span class="font-weight-bold">Ilość obserwowanych:</span>
+                {{ followedCount }}
+            </p>
+        </div>
+    </div>
+
+    <div footer>
+        <button
+                *ngIf="!isLoggedUserProfile && !isAlreadyFollowed"
+                msButton
+                color="success"
+                ngbTooltip="Dodaj do obserwowanych"
+                (click)="follow()"
+        >
+            Zobserwuj
+        </button>
+
+        <button
+                *ngIf="!isLoggedUserProfile && isAlreadyFollowed"
+                msButton
+                color="warning"
+                ngbTooltip="Usuń z obserwowanych"
+                (click)="unfollow()"
+        >
+            Nie obserwuj
+        </button>
     </div>
 </ms-card>
 
 <ms-card class="mt-2">
     <div header>
-        Yoodle użytkownika
+        {{ isLoggedUserProfile ? 'Moje Yoodle' : 'Yoodle użytkownika' }}
     </div>
 
     <div body>
 
         <ng-container *ngIf="profile.tweetCount > 0; else emptyTemplate">
             <div *ngFor="let yoodle of profile.tweets" class="mt-2">
-                <ms-yoodle [yoodle]="yoodle" [readOnly]="true"></ms-yoodle>
+                <ms-yoodle [yoodle]="yoodle" [readOnly]="isLoggedUserProfile"></ms-yoodle>
             </div>
         </ng-container>
 

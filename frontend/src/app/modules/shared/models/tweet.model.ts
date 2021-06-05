@@ -1,6 +1,7 @@
-import {isDefined} from "../utils";
+import {createDateIfDefined, isDefined} from "../utils";
 import {Emotion} from "./emotion";
 import {EmotionType} from "../enums/emotion.enum";
+import {Profile} from "../../main/components/user/models/profile.model";
 
 export class Tweet {
     public id: string;
@@ -8,6 +9,8 @@ export class Tweet {
     public text: string;
     public comments: Tweet[];
     public emotions: Emotion[];
+    public author: Profile;
+    public createdDate: Date;
 
     public constructor(res?: Tweet) {
         if (isDefined(res)) {
@@ -16,6 +19,8 @@ export class Tweet {
             this.text = res.text;
             this.comments = res.comments.map(comment => new Tweet(comment)).reverse();
             this.emotions = res.emotions.map(emotion => new Emotion(emotion));
+            this.author = new Profile(res.author);
+            this.createdDate = createDateIfDefined(res.createdDate);
         }
     }
 

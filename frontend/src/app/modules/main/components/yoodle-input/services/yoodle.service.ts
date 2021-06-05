@@ -23,6 +23,12 @@ export class YoodleService {
     );
   }
 
+  public get(link: string): Observable<Tweet> {
+    return this._apiService.get(link).pipe(
+        map(res => new Tweet(res))
+    )
+  }
+
   public comment(text: string, parentId: string): Observable<Tweet> {
     const request = this._requestFactory.getCreateRequest(parentId, text);
 

@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Tweet} from "../../models/tweet.model";
 import {EmotionService} from "../../services/emotion.service";
 import {EmotionType} from "../../enums/emotion.enum";
+import {flatMap, tap} from "rxjs/operators";
 
 @Component({
   selector: 'ms-yoodle',
@@ -17,7 +18,11 @@ export class YoodleComponent {
       private emotionService: EmotionService
   ) { }
 
-  public saveEmotion(emotionType: EmotionType): void {
-    this.emotionService.create(this.yoodle.link, emotionType).subscribe(res => console.log(res));
+  public saveAndUpdateEmotions(emotionType: EmotionType): void {
+    this.emotionService.create(this.yoodle.link, emotionType)
+        .pipe(
+            flatMap(() => this.emotionService.getEmotions(this.yoodle.link)),
+            tap(emotions => this.yoodle.emotions = emotions)
+        ).subscribe();
   }
 }

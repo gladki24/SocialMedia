@@ -1,5 +1,6 @@
 <ms-yoodle
         [yoodle]="yoodle"
+        [readOnly]="isLoggedUserYoodle(yoodle)"
 ></ms-yoodle>
 
 <div class="card mt-1 mb-4">
@@ -16,4 +17,9 @@
     </form>
 </div>
 
-<ms-yoodle [yoodle]="comment" class="ml-5 mb-2" *ngFor="let comment of yoodle.comments"></ms-yoodle>
+<ms-yoodle
+        [readOnly]="isLoggedUserYoodle(comment)"
+        [yoodle]="comment"
+        class="ml-5 mb-2"
+        *ngFor="let comment of yoodle.comments"
+></ms-yoodle>

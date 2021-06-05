@@ -10,5 +10,6 @@ export enum Icon {
   Comments = 'comment_bank',
   Search = 'search',
   Link = 'link',
-  Sad = 'sentiment_very_dissatisfied'
+  Sad = 'sentiment_very_dissatisfied',
+  Observe = 'done_outline'
 }

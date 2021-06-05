@@ -1,15 +1,48 @@
 import { Injectable } from '@angular/core';
 import {Profile} from "../models/profile.model";
-import {ActivatedRoute} from "@angular/router";
+import {UserApiService} from "./user-api.service";
+import {Observable} from "rxjs";
+import {flatMap, tap} from "rxjs/operators";
+import {AlertService} from "../../../../shared/services/alert.service";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ProfileService {
 
-  public profile: Profile = new Profile();
-
   public constructor(
-      private readonly route: ActivatedRoute
+      private readonly apiService: UserApiService,
+      private readonly alertService: AlertService
   ) {
-    this.profile = route.snapshot.data.profile;
+  }
+
+  public follow(id: string): Observable<Profile[]> {
+    return this.apiService.follow(id).pipe(
+        tap(() => this.alertService.notifySuccess('Fajen!', `Zaobserwowałeś profil użytkownika ${id}`)),
+        flatMap(() => this.following(id))
+    )
+  }
+
+  public unfollow(id: string): Observable<Profile[]> {
+    return this.apiService.unfollow(id).pipe(
+        tap(() => this.alertService.notifyDefault('Ok!', `Już nie obserwujesz ${id}`)),
+        flatMap(() => this.following(id))
+    )
+  }
+
+  public currentUserFollowed(): Observable<Profile[]> {
+    return this.apiService.getCurrentUserAllFollowedUsers();
+  }
+
+  public currentUserFollowing(): Observable<Profile[]> {
+    return this.apiService.getCurrentUserAllFollowingUsers();
+  }
+
+  public followed(id: string): Observable<Profile[]> {
+    return this.apiService.getUserAllFollowedUsers(id);
+  }
+
+  public following(id: string): Observable<Profile[]> {
+    return this.apiService.getUserAllFollowingUsers(id);
   }
 }

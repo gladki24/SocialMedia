@@ -3,11 +3,18 @@
         <ms-emotions
                 [tweet]="yoodle"
                 [disabled]="readOnly"
-                (emotionClicked)="saveEmotion($event)"
+                (emotionClicked)="saveAndUpdateEmotions($event)"
         ></ms-emotions>
     </div>
 
     <div body>
-        {{ yoodle.text }}
+        <span class="font-weight-bold">
+            {{ yoodle.text }}
+        </span>
+    </div>
+
+    <div footer>
+        <span>Author: </span> <a [routerLink]="'/users/' + yoodle.author.identifier"><span class="font-italic">{{ yoodle.author.identifier }}</span></a> ,
+        <span class="font-italic">Data utworzenia: </span> <span class="font-italic">{{ yoodle.createdDate | date }}</span>
     </div>
 </ms-card>

@@ -65,6 +65,22 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    public List<UserDto> userListOfFollowedUsers(String identifier) {
+        User user = userRepository.findByIdentifier(Identifier.of(identifier)).orElseThrow(NoSuchElementException::new);
+        return user.getFollowing().stream()
+                .map(Following::getTo)
+                .map(mapper::user)
+                .collect(Collectors.toList());
+    }
+
+    public List<UserDto> userListOfFollowingUsers(String identifier) {
+        User user = userRepository.findByIdentifier(Identifier.of(identifier)).orElseThrow(NoSuchElementException::new);
+        return user.getFollowers().stream()
+                .map(Following::getTo)
+                .map(mapper::user)
+                .collect(Collectors.toList());
+    }
+
     @Transactional
     public void followUser(String identifier) throws Exception {
         User currentUser = getCurrentUserAccount();
