@@ -66,7 +66,6 @@ public class UserService {
         return mapper.user(user);
     }
 
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public List<UserDto> allUsers() {
         return mapper.users(userRepository.findAll());
     }
