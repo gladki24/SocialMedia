@@ -15,8 +15,7 @@ export class MsRegisterComponent {
   public readonly registerForm = new FormGroup({
     login: new FormControl('', Validators.required),
     name: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-    acceptedRules: new FormControl(false, Validators.required)
+    password: new FormControl('', Validators.required)
   });
 
   public constructor(
