@@ -14,6 +14,7 @@ export class NotificationsComponent
     super('Powiadomienia');
   }
 
+  // TODO Tutaj trzeba zrobić powiadomienia
   ngOnInit(): void {
   }
 

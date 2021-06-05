@@ -2,6 +2,10 @@
 
 main {
     min-height: 100vh;
+    background: #9CECFB;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #0052D4, #65C7F7, #6A9BE0FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #0052D4, #65C7F7, #6A9BE0FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-top: 2rem;
 }
 
 html, body { height: 100%; }
