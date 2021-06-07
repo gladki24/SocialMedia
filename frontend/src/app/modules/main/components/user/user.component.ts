@@ -6,7 +6,7 @@ import { Profile } from './models/profile.model';
 import {Icon} from "../../../shared/enums/icon.enum";
 import {ProfileResolver} from "./resolvers/profile.resolver";
 import {isDefined} from "../../../shared/utils";
-import {flatMap} from "rxjs/operators";
+import {flatMap, tap} from "rxjs/operators";
 
 @Component({
   selector: 'ms-user',
@@ -65,7 +65,7 @@ export class UserComponent extends MainActivityBase {
   public follow(): void {
     this.service.follow(this.profile.identifier)
         .pipe(
-            flatMap(followingProfiles => this.followingProfiles = followingProfiles),
+            tap(followingProfiles => this.followingProfiles = followingProfiles),
             flatMap(() => this.service.currentUserFollowed())
         ).subscribe(currentUserFollowed => this.currentUserFollowedProfiles = currentUserFollowed);
   }
@@ -73,7 +73,7 @@ export class UserComponent extends MainActivityBase {
   public unfollow(): void {
     this.service.unfollow(this.profile.identifier)
         .pipe(
-            flatMap(followingProfiles => this.followingProfiles = followingProfiles),
+            tap(followingProfiles => this.followingProfiles = followingProfiles),
             flatMap(() => this.service.currentUserFollowed())
         ).subscribe(currentUserFollowed => this.currentUserFollowedProfiles = currentUserFollowed);
   }
