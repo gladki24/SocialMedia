@@ -22,10 +22,6 @@ databaseChangeLog:
               - column:
                   name: PARENT_TWEET_LINK
                   type: NVARCHAR(20)
-                  constraints:
-                    nullable: true
-                    foreignKeyName: FK_PARENT_TWEET_LINK
-                    references: TWEET(LINK)
               - column:
                   name: TEXT
                   type: NVARCHAR(255)
