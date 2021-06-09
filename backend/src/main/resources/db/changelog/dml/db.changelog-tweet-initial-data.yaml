@@ -13,7 +13,7 @@ databaseChangeLog:
                   name: USER_ID
                   value: 2
               - column:
-                  name: PARENT_TWEET_LINK
+                  name: PARENT_TWEET_ID
                   value: null
               - column:
                   name: TEXT
@@ -34,8 +34,8 @@ databaseChangeLog:
                   name: USER_ID
                   value: 3
               - column:
-                  name: PARENT_TWEET_LINK
-                  value: '5WRqhll4zCbPj6GYPNvK'
+                  name: PARENT_TWEET_ID
+                  value: 1
               - column:
                   name: TEXT
                   value: 'Przykładowy tweet numer 2, jest on komentarzem do tweeta numer 1'

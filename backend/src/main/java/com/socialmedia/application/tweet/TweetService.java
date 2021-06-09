@@ -64,9 +64,10 @@ public class TweetService {
     @Transactional
     public TweetDto createTweet(TweetCommand command) {
         User user = userService.getCurrentUserAccount();
-        Tweet tweet = new Tweet(Text.of(command.getText()), user);
+        Tweet tweet = new Tweet(command, user);
         if (StringUtils.hasText(command.getParentTweetLink())) {
             Tweet parentTweet = tweetRepository.findByLink(Link.of(command.getParentTweetLink())).orElseThrow(NoSuchElementException::new);
+            tweet.linkParent(parentTweet);
             parentTweet.addComment(tweet);
         }
         return mapper.tweet(tweetRepository.save(tweet));

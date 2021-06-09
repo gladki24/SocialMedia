@@ -1,5 +1,6 @@
 package com.socialmedia.domain.tweet;
 
+import com.socialmedia.adapters.rest.resource.command.TweetCommand;
 import com.socialmedia.domain.common.Link;
 import com.socialmedia.domain.common.Text;
 import com.socialmedia.domain.emotions.Emotion;
@@ -27,9 +28,6 @@ public class Tweet {
     @SequenceGenerator(name = "tweet_sequence", sequenceName = "SEQ_TWEET", allocationSize = 1)
     private Long id;
 
-    @Column(name = "PARENT_TWEET_LINK")
-    private String parentTweetLink;
-
     @Embedded
     @AttributeOverride(name = "value", column = @Column(name = "TEXT"))
     private Text text;
@@ -45,15 +43,17 @@ public class Tweet {
     @JoinColumn(name = "TWEET_ID")
     private List<Emotion> emotions = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "PARENT_TWEET_LINK")
+    @ManyToOne
+    private Tweet parentTweet;
+
+    @OneToMany(mappedBy = "parentTweet", cascade = CascadeType.ALL)
     private List<Tweet> comments = new ArrayList<>();
 
     @CreationTimestamp
     private LocalDateTime createdDate;
 
-    public Tweet(Text text, User user) {
-        this.text = text;
+    public Tweet(TweetCommand command, User user) {
+        this.text = Text.of(command.getText());
         this.link = Link.init();
         this.user = user;
     }
@@ -62,6 +62,9 @@ public class Tweet {
         this.emotions.add(emotion);
     }
 
+    public void linkParent(Tweet tweet) {
+        this.parentTweet = tweet;
+    }
     public void addComment(Tweet tweet) {
         this.comments.add(tweet);
     }

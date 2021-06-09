@@ -22,6 +22,7 @@ public interface AllInOneMapper {
     @Mapping(target = "text", source = "text.value")
     @Mapping(target = "link", source = "link.value")
     @Mapping(target = "author", source = "user")
+    @Mapping(target = "parentTweetLink", source = "parentTweet.link.value")
     TweetDto tweet(Tweet tweet);
 
     @Mapping(target = "identifier", source = "identifier.value")
