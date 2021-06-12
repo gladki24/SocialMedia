@@ -15,6 +15,9 @@
 
     <div footer>
         <span>Author: </span> <a [routerLink]="'/users/' + yoodle.author.identifier"><span class="font-italic">{{ yoodle.author.identifier }}</span></a> ,
-        <span class="font-italic">Data utworzenia: </span> <span class="font-italic">{{ yoodle.createdDate | date }}</span>
+        <span class="font-italic">Data utworzenia: </span><span class="font-italic">{{ yoodle.createdDate | date }}</span>,
+        <ng-container *ngIf="yoodle.parentTweetLink">
+            <span>komentarz do tego: </span> <a [routerLink]="'/yoodle/' + yoodle.parentTweetLink">yoodla</a>
+        </ng-container>
     </div>
 </ms-card>

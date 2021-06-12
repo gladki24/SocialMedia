@@ -11,6 +11,7 @@ export class Tweet {
     public emotions: Emotion[];
     public author: Profile;
     public createdDate: Date;
+    public parentTweetLink: string;
 
     public constructor(res?: Tweet) {
         if (isDefined(res)) {
@@ -21,6 +22,7 @@ export class Tweet {
             this.emotions = res.emotions.map(emotion => new Emotion(emotion));
             this.author = new Profile(res.author);
             this.createdDate = createDateIfDefined(res.createdDate);
+            this.parentTweetLink = res.parentTweetLink;
         }
     }
 
