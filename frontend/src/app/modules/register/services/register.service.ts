@@ -13,7 +13,7 @@ export class RegisterService {
   ) { }
 
   public register(login: string, username: string, password: string): Observable<RegisterResponseModel> {
-    const request = this.requestFactory.getRegisterRequest(login, username, password);
+    const request = this.requestFactory.getRegisterRequest(login, password, username);
     return this.api.register(request);
   }
 }
