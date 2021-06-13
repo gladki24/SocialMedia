@@ -37,11 +37,11 @@ export class NavigationComponent implements OnInit {
                 url: '/home',
                 icon: this.Icon.Home
             })
-            .add({
-                name: 'Powiadomienia',
-                url: '/notifications',
-                icon: this.Icon.Notifications
-            })
+            // .add({
+            //     name: 'Powiadomienia',
+            //     url: '/notifications',
+            //     icon: this.Icon.Notifications
+            // })
             .add({
                 name: 'Profil',
                 url: '/profile',
